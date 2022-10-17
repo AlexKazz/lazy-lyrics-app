@@ -3,9 +3,9 @@ import allGenres from '../data';
 
 function GenreButtons() {
   return (
-    <div className='h-1/6 mt-11 flex justify-center'>
+    <div className='flex justify-center h-10 my-5'>
       {allGenres.map((genre) => (
-        <button className='bg-cyan-600 rounded-full p-10 m-5'>
+        <button className='bg-cyan-600 rounded-md px-2 mx-2 flex-grow-1'>
           {genre.genre}
         </button>
       ))}

@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <main className='bg-slate-300 flex flex-col h-screen justify-between'>
+    <main className='bg-slate-300 flex flex-col h-screen'>
       <Title />
       <GenreButtons />
       <div className='flex h-2/3'>
