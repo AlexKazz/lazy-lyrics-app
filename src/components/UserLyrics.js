@@ -7,7 +7,7 @@ function UserLyrics({ lyrics, setLyrics }) {
   };
 
   return (
-    <div className='w-2/3 bg-lime-400 text-center'>
+    <div className='font-raleway w-2/3 bg-lime-400 text-center'>
       {lyrics
         ? lyrics.map((lyric) => (
             <div key={lyric.id} className=''>

@@ -6,7 +6,7 @@ function Footer({ lyrics, setLyrics }) {
   };
 
   return (
-    <div className='bg-violet-400 flex-grow flex justify-around'>
+    <div className='font-raleway bg-violet-400 flex-grow flex justify-around'>
       <button
         onClick={() => {
           navigator.clipboard.writeText(

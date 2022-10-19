@@ -14,7 +14,7 @@ function LyricInput({ setLyrics, lyrics }) {
   };
 
   return (
-    <div className='bg-red-400 w-1/3 '>
+    <div className='font-raleway bg-red-400 w-1/3 '>
       <form onSubmit={addLyric}>
         <input className='flex m-3' placeholder='Start typing!' type='text' />
         <input type='submit' value='' />
