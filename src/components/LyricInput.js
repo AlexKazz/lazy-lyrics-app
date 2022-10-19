@@ -14,11 +14,16 @@ function LyricInput({ setLyrics, lyrics }) {
   };
 
   return (
-    <div className='font-raleway bg-red-400 w-1/3 '>
+    <div className='font-raleway border border-slate-700 rounded-xl mx-4 bg-custom-white w-1/3 flex justify-center'>
       <form onSubmit={addLyric}>
-        <input className='flex m-3' placeholder='Start typing!' type='text' />
+        <input
+          className='my-5 ml-3 w-10/12 rounded-md p-1'
+          placeholder='Enter a word!'
+          type='text'
+        />
         <input type='submit' value='' />
       </form>
+      {/* <button onClick={() => addLyric()}>Submit</button> */}
     </div>
   );
 }

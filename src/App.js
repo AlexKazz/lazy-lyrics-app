@@ -9,7 +9,7 @@ function App() {
   const [lyrics, setLyrics] = useState('');
 
   return (
-    <main className='bg-slate-300 flex flex-col h-screen'>
+    <main className='bg-gray-300 flex flex-col h-screen'>
       <Title />
       <GenreButtons />
       <div className='flex h-2/3'>
