@@ -7,17 +7,17 @@ function UserLyrics({ lyrics, setLyrics }) {
   };
 
   return (
-    <div className='font-raleway w-2/3 bg-custom-white border border-slate-700 rounded-xl text-center mr-4'>
+    <div className='font-fell w-2/3 bg-custom-white border border-slate-700 rounded-xl text-center mr-4'>
       {lyrics
         ? lyrics.map((lyric) => (
             <div key={lyric.id} className=''>
               {lyric.lyric}
-              <button
+              {/* <button
                 className='opacity-25 text-xs pl-5'
                 onClick={() => deleteLyric(lyric.id)}
               >
                 ❌
-              </button>
+              </button> */}
             </div>
           ))
         : null}
