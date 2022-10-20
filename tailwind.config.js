@@ -6,7 +6,7 @@ module.exports = {
         hero: "url('/src/images/singer.png')",
       },
       fontFamily: {
-        raleway: ['Raleway', 'sans-serif'],
+        fell: ['IM Fell Double Pica', 'serif'],
       },
       colors: {
         'custom-blue': '#15133C',

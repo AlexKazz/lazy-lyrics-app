@@ -3,7 +3,7 @@ import allGenres from '../data';
 
 function GenreButtons() {
   return (
-    <div className='font-raleway flex justify-center h-10 my-3'>
+    <div className='font-fell flex justify-center h-10 my-3'>
       {allGenres.map((genre) => (
         <button
           key={genre.id}
