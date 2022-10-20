@@ -2,6 +2,9 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        hero: "url('/src/images/singer.png')",
+      },
       fontFamily: {
         raleway: ['Raleway', 'sans-serif'],
       },
