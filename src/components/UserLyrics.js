@@ -8,7 +8,7 @@ function UserLyrics({ lyrics, setLyrics }) {
   console.log(lyrics);
 
   return (
-    <div className='font-fell w-2/3 bg-custom-white border border-slate-700 rounded-xl text-center'>
+    <div className='font-fell w-2/3 overflow-auto bg-custom-white border border-slate-700 rounded-xl pt-8 pb-8 text-center'>
       {lyrics
         ? lyrics.map((lyric) => (
             <div key={lyric.id}>

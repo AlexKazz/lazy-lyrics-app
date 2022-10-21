@@ -58,6 +58,7 @@ function LyricInput({ setLyrics, lyrics }) {
               { id: uuidv4(), lyric: snippet, artist: artist },
             ];
             setLyrics(newArr);
+            e.target[0].value = '';
           } catch (err) {
             console.log(err);
           }
