@@ -13,13 +13,13 @@ function Footer({ lyrics, setLyrics }) {
             lyrics ? lyrics.map((lyric) => ' ' + lyric.lyric) : ''
           );
         }}
-        className='bg-custom-white border shadow-md shadow-slate-600 border-slate-700 px-6 m-10 rounded-lg hover:bg-orange-300 hover:scale-90'
+        className='bg-custom-white border shadow-md shadow-slate-600 border-slate-700 px-6 m-16 rounded-lg hover:bg-orange-300 hover:scale-90'
       >
         Copy
       </button>
       <button
         onClick={() => clearLyrics()}
-        className='bg-custom-white border shadow-md shadow-slate-600 border-slate-700 px-6 m-10 rounded-lg hover:bg-orange-300 hover:scale-90'
+        className='bg-custom-white border shadow-md shadow-slate-600 border-slate-700 px-6 m-16 rounded-lg hover:bg-orange-300 hover:scale-90'
       >
         Start Fresh
       </button>

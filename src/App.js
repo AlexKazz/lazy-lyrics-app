@@ -11,9 +11,9 @@ function App() {
   return (
     <main className='bg-hero bg-no-repeat bg-cover bg-center bg-fixed flex flex-col h-screen'>
       <Title />
-      <GenreButtons />
-      <div className='flex h-2/3'>
-        <LyricInput lyrics={lyrics} setLyrics={setLyrics} />
+      {/* <GenreButtons /> */}
+      <LyricInput lyrics={lyrics} setLyrics={setLyrics} />
+      <div className='flex justify-center h-2/3'>
         <UserLyrics lyrics={lyrics} setLyrics={setLyrics} />
       </div>
       <Footer lyrics={lyrics} setLyrics={setLyrics} />
