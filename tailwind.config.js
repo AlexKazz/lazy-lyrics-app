@@ -3,10 +3,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        hero: "url('/src/images/singer.png')",
+        hero: "url('/src/images/microphone1.png')",
       },
       fontFamily: {
-        fell: ['IM Fell Double Pica', 'serif'],
+        fell: ['Quicksand', 'sans-serif'],
       },
       colors: {
         'custom-blue': '#15133C',
