@@ -9,11 +9,11 @@ function App() {
   const [lyrics, setLyrics] = useState('');
 
   return (
-    <main className='bg-hero bg-no-repeat bg-cover bg-center bg-fixed flex flex-col h-screen'>
+    <main className='bg-hero bg-no-repeat bg-cover flex flex-col h-screen max-h-screen overflow-hidden'>
       <Title />
       {/* <GenreButtons /> */}
-      <LyricInput lyrics={lyrics} setLyrics={setLyrics} />
-      <div className='flex justify-center h-2/3'>
+      <div className='flex flex-col items-center h-2/3 max-h-fit'>
+        <LyricInput lyrics={lyrics} setLyrics={setLyrics} />
         <UserLyrics lyrics={lyrics} setLyrics={setLyrics} />
       </div>
       <Footer lyrics={lyrics} setLyrics={setLyrics} />

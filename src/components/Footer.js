@@ -6,20 +6,20 @@ function Footer({ lyrics, setLyrics }) {
   };
 
   return (
-    <div className='font-fell flex-grow flex justify-around'>
+    <div className='font-fell flex flex-wrap items-center my-16 mt-32 justify-evenly'>
       <button
         onClick={() => {
           navigator.clipboard.writeText(
             lyrics ? lyrics.map((lyric) => ' ' + lyric.lyric) : ''
           );
         }}
-        className='bg-custom-white border shadow-md shadow-slate-600 border-slate-700 px-6 m-16 rounded-lg hover:bg-orange-300 hover:scale-90'
+        className='bg-white border border-black px-6 py-2 rounded-sm hover:bg-slate-100'
       >
         Copy
       </button>
       <button
         onClick={() => clearLyrics()}
-        className='bg-custom-white border shadow-md shadow-slate-600 border-slate-700 px-6 m-16 rounded-lg hover:bg-orange-300 hover:scale-90'
+        className='bg-white border border-black px-6 py-2 rounded-sm hover:bg-slate-100'
       >
         Start Fresh
       </button>

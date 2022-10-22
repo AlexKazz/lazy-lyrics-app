@@ -52,7 +52,6 @@ function LyricInput({ setLyrics, lyrics }) {
               `http://api.musixmatch.com/ws/1.1/track.snippet.get?track_id=${trackId}&apikey=${process.env.REACT_APP_MM_KEY}`
             );
             const snippet = newRes.data.message.body.snippet.snippet_body;
-            console.log('👉', newRes.data.message.body);
             const newArr = [
               ...lyrics,
               { id: uuidv4(), lyric: snippet, artist: artist },
@@ -69,17 +68,17 @@ function LyricInput({ setLyrics, lyrics }) {
   }
 
   return (
-    <div className='font-fell flex justify-center'>
+    <div className='font-fell flex w-2/3 justify-evenly'>
       <form onSubmit={getTrackId}>
         <input
-          className='my-5 rounded-md p-1'
+          className='mt-10 mr-2 rounded-sm p-1'
           placeholder='Enter a word!'
           type='text'
         />
         <input type='submit' value='' />
         <button
           onClick={() => getTrackIdBtn()}
-          className='bg-custom-white border shadow-md shadow-slate-600 border-slate-700 px-2 my-5 mx-2 rounded-lg hover:bg-orange-300'
+          className='bg-white bg-opacity-90 border border-black px-2 py-1 my-5 rounded-sm hover:bg-slate-100'
         >
           Submit
         </button>
