@@ -71,14 +71,14 @@ function LyricInput({ setLyrics, lyrics }) {
     <div className='font-fell flex w-2/3 justify-evenly'>
       <form onSubmit={getTrackId}>
         <input
-          className='mt-10 mr-2 rounded-sm p-1'
+          className='mt-10 mr-2 rounded-sm p-1 shadow-lg'
           placeholder='Enter a word!'
           type='text'
         />
         <input type='submit' value='' />
         <button
           onClick={() => getTrackIdBtn()}
-          className='bg-white bg-opacity-90 border border-black px-2 py-1 my-5 rounded-sm hover:bg-slate-100'
+          className='bg-white shadow-lg bg-opacity-90 border border-black px-2 py-1 my-5 rounded-sm hover:bg-slate-100'
         >
           Submit
         </button>

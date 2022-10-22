@@ -13,13 +13,13 @@ function Footer({ lyrics, setLyrics }) {
             lyrics ? lyrics.map((lyric) => ' ' + lyric.lyric) : ''
           );
         }}
-        className='bg-white border border-black px-6 py-2 rounded-sm hover:bg-slate-100'
+        className='shadow-lg bg-white border border-black px-6 py-2 rounded-sm hover:bg-slate-100'
       >
         Copy
       </button>
       <button
         onClick={() => clearLyrics()}
-        className='bg-white border border-black px-6 py-2 rounded-sm hover:bg-slate-100'
+        className='shadow-lg bg-white border border-black px-6 py-2 rounded-sm hover:bg-slate-100'
       >
         Start Fresh
       </button>
