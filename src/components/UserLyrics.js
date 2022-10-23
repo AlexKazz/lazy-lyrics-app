@@ -7,7 +7,7 @@ function UserLyrics({ lyrics, setLyrics }) {
   // };
 
   return (
-    <div className='font-fell w-2/3 flex-col min-h-full shadow-lg overflow-y-auto bg-white bg-opacity-95 rounded-sm py-9 px-10 text-center'>
+    <div className='font-fell w-2/3 flex-col min-h-full flex-grow-0 shadow-lg overflow-y-auto max-h-0 bg-white bg-opacity-95 rounded-sm py-9 px-10 text-center'>
       {lyrics
         ? lyrics.map((lyric) => (
             <div key={lyric.id} className='py-1'>
