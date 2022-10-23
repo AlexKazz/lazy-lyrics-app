@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Title from './components/Title';
+import Navbar from './components/Navbar';
 import GenreButtons from './components/GenreButtons';
 import LyricInput from './components/LyricInput';
 import UserLyrics from './components/UserLyrics';
@@ -9,8 +9,8 @@ function App() {
   const [lyrics, setLyrics] = useState('');
 
   return (
-    <main className='bg-hero bg-no-repeat bg-cover flex flex-col h-screen max-h-screen overflow-hidden'>
-      <Title />
+    <main className='bg-hero bg-no-repeat bg-cover flex flex-col h-screen max-h-screen min-w-fit'>
+      <Navbar />
       {/* <GenreButtons /> */}
       <div className='flex flex-col items-center h-2/3 max-h-fit'>
         <LyricInput lyrics={lyrics} setLyrics={setLyrics} />
