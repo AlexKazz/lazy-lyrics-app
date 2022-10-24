@@ -1,20 +1,30 @@
 import React from 'react';
+import { Routes, Route, NavLink, useNavigate } from 'react-router-dom';
+import About from './About';
 
 function Navbar() {
+  const navigate = useNavigate();
+
   return (
     <div className='font-fell flex text-slate-500 items-center mt-5'>
-      <a
-        href='https://github.com/AlexKazz/lazy-lyrics-app'
-        target='_blank'
-        rel='noreferrer'
+      <button
+        onClick={() => {
+          navigate('/');
+        }}
       >
         <div className='text-3xl ml-8 link link-underline link-underline-black hover:text-slate-400'>
           Lazy Lyrics
         </div>
-      </a>
+      </button>
       <div className='flex'>
         <div className='mx-10 link link-underline link-underline-black hover:text-slate-400'>
-          About
+          <button
+            onClick={() => {
+              navigate('/about');
+            }}
+          >
+            About
+          </button>
         </div>
       </div>
     </div>
