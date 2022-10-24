@@ -2,7 +2,7 @@ import React from 'react';
 
 function About() {
   return (
-    <div className='text-slate-400 font-fell m-24 text-center text-3xl'>
+    <div className='flex flex-col text-slate-400 font-fell text-center text-3xl shadow-black drop-shadow-lg mt-24 mb-40 mx-6 overflow-hidden'>
       <p>
         Lazy Lyrics uses a third party lyric API to grab a random lyric snippet
         based on one word you input. The lyrics are from real songs.

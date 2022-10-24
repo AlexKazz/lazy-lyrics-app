@@ -86,10 +86,10 @@ function LyricInput({ setLyrics, lyrics }) {
   }
 
   return (
-    <div className='font-fell flex text-slate-500'>
+    <div className='font-fell flex text-slate-500 shadow-black drop-shadow-lg'>
       <form onSubmit={getTrackId}>
         <input
-          className='mt-10 mr-2 rounded-sm p-1 shadow-lg opacity-95'
+          className='mt-10 mr-2 rounded-sm p-1 shadow-md opacity-95 shadow-slate-400'
           placeholder='Enter a word'
           type='text'
         />
