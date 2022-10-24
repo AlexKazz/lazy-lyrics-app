@@ -21,6 +21,12 @@ function LyricInput({ setLyrics, lyrics }) {
             );
             const snippet = newRes.data.message.body.snippet.snippet_body;
             const newArr = [...lyrics, { id: uuidv4(), lyric: snippet }];
+            console.log(
+              'newRes.data.message.body 👉',
+              newRes.data.message.body
+            );
+            console.log('snippet 👉', snippet);
+            console.log('trackId 👉', trackId);
 
             setLyrics(newArr);
           } catch (err) {
@@ -43,8 +49,12 @@ function LyricInput({ setLyrics, lyrics }) {
         const trackId =
           res.data.message.body.track_list[randomNum].track.track_id;
 
+        console.log('trackId 👉', trackId);
         const artist =
           res.data.message.body.track_list[randomNum].track.artist_name;
+
+        const song =
+          res.data.message.body.track_list[randomNum].track.track_name;
 
         getTrackLyrics();
         async function getTrackLyrics() {
@@ -53,9 +63,16 @@ function LyricInput({ setLyrics, lyrics }) {
               `http://api.musixmatch.com/ws/1.1/track.snippet.get?track_id=${trackId}&apikey=${process.env.REACT_APP_MM_KEY}`
             );
             const snippet = newRes.data.message.body.snippet.snippet_body;
+            console.log('snippet 👉', snippet);
             const newArr = [
               ...lyrics,
-              { id: uuidv4(), lyric: snippet, artist: artist },
+              {
+                id: uuidv4(),
+                lyric: snippet,
+                song: song,
+                artist: artist,
+                prompt: e.target[0].value,
+              },
             ];
             setLyrics(newArr);
             e.target[0].value = '';

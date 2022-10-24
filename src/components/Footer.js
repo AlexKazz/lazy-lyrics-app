@@ -21,7 +21,7 @@ function Footer({ lyrics, setLyrics }) {
         onClick={() => clearLyrics()}
         className='shadow-lg bg-opacity-95 bg-white border border-slate-400 px-5 mx-10 py-2 rounded-sm hover:bg-slate-100'
       >
-        Start Fresh
+        Clear
       </button>
     </div>
   );
