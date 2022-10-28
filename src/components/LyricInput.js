@@ -13,20 +13,21 @@ function fixer(str) {
 
 function LyricInput({ setLyrics, lyrics }) {
   async function getTrackIdBtn(e) {
-    const randomNum = Math.floor(Math.random() * 10);
+    const randomPage = Math.ceil(Math.random() * 10);
+    const randomIndex = Math.floor(Math.random() * 10);
     if (e.target[0].value)
       try {
         const res = await axios.get(
-          `http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=${e}&apikey=${process.env.REACT_APP_MM_KEY}`
+          `http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=${e}&page=${randomPage}&apikey=${process.env.REACT_APP_MM_KEY}`
         );
         const trackId =
-          res.data.message.body.track_list[randomNum].track.track_id;
+          res.data.message.body.track_list[randomIndex].track.track_id;
 
         const artist =
-          res.data.message.body.track_list[randomNum].track.artist_name;
+          res.data.message.body.track_list[randomIndex].track.artist_name;
 
         const song =
-          res.data.message.body.track_list[randomNum].track.track_name;
+          res.data.message.body.track_list[randomIndex].track.track_name;
 
         getTrackLyrics();
         async function getTrackLyrics() {
@@ -59,20 +60,23 @@ function LyricInput({ setLyrics, lyrics }) {
 
   async function getTrackId(e) {
     e.preventDefault();
-    const randomNum = Math.floor(Math.random() * 10);
+    const randomPage = Math.ceil(Math.random() * 10);
+    const randomIndex = Math.floor(Math.random() * 10);
     if (e.target[0].value)
       try {
         const res = await axios.get(
-          `http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=${e.target[0].value}&apikey=${process.env.REACT_APP_MM_KEY}`
+          `http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=${e.target[0].value}&page=${randomPage}&apikey=${process.env.REACT_APP_MM_KEY}`
         );
         const trackId =
-          res.data.message.body.track_list[randomNum].track.track_id;
+          res.data.message.body.track_list[randomIndex].track.track_id;
 
         const artist =
-          res.data.message.body.track_list[randomNum].track.artist_name;
+          res.data.message.body.track_list[randomIndex].track.artist_name;
 
         const song =
-          res.data.message.body.track_list[randomNum].track.track_name;
+          res.data.message.body.track_list[randomIndex].track.track_name;
+
+        console.log('res.data.message.body 👉', res.data.message.body);
 
         getTrackLyrics();
         async function getTrackLyrics() {
@@ -82,6 +86,10 @@ function LyricInput({ setLyrics, lyrics }) {
             );
             const snippet = newRes.data.message.body.snippet.snippet_body;
             const fixedSnippet = fixer(snippet);
+            console.log(
+              'newRes.data.message.body 🌝',
+              newRes.data.message.body
+            );
             const newArr = [
               ...lyrics,
               {
