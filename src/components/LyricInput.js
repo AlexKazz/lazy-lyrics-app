@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
 function fixer(str) {
-  const punctuation = ['.', ',', '!', '?'];
+  const punctuation = ['.', ',', '!', '?', ':', ';', '('];
   for (const el of punctuation)
     if (str.includes(el)) {
       return str.substring(0, str.indexOf(el));
