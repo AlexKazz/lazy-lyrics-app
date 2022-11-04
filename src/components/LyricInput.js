@@ -76,8 +76,6 @@ function LyricInput({ setLyrics, lyrics }) {
         const song =
           res.data.message.body.track_list[randomIndex].track.track_name;
 
-        console.log('res.data.message.body 👉', res.data.message.body);
-
         getTrackLyrics();
         async function getTrackLyrics() {
           try {
@@ -86,10 +84,6 @@ function LyricInput({ setLyrics, lyrics }) {
             );
             const snippet = newRes.data.message.body.snippet.snippet_body;
             const fixedSnippet = fixer(snippet);
-            console.log(
-              'newRes.data.message.body 🌝',
-              newRes.data.message.body
-            );
             const newArr = [
               ...lyrics,
               {
