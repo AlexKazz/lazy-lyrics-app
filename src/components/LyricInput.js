@@ -115,7 +115,7 @@ function LyricInput({ setLyrics, lyrics }) {
         />
         <input type='submit' value='' />
         <button
-          onClick={() => getTrackIdBtn()}
+          onClick={() => getTrackIdBtn}
           className='bg-white shadow-lg bg-opacity-95 border border-slate-400 px-2 py-1 my-5 rounded-sm hover:bg-slate-100'
         >
           Submit
