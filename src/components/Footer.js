@@ -10,7 +10,7 @@ function Footer({ lyrics, setLyrics }) {
       <button
         onClick={() => {
           navigator.clipboard.writeText(
-            lyrics ? lyrics.map((lyric) => ' ' + lyric.lyric) : ''
+            lyrics ? lyrics.map((lyric) => lyric.lyric + '\n') : ''
           );
         }}
         className='shadow-lg bg-opacity-95 bg-white border border-slate-400 px-5 mx-10 py-2 rounded-sm hover:bg-slate-100'
