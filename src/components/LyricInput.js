@@ -18,9 +18,15 @@ function LyricInput({ setLyrics, lyrics }) {
     const randomIndex = Math.floor(Math.random() * 10);
     if (e.target[0].value)
       try {
-        const res = await axios.get(
-          `http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=${e.target[0].value}&page=${randomPage}&apikey=${process.env.REACT_APP_MM_KEY}`
-        );
+        const res = await axios.get('/api', {
+          params: {
+            userInput: e.target[0].value,
+          },
+        });
+        // const res = await axios.get(
+        //   `http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=${e.target[0].value}&page=${randomPage}&apikey=${process.env.REACT_APP_MM_KEY}`
+        // );
+        console.log('RES 👉', res);
         const trackId =
           res.data.message.body.track_list[randomIndex].track.track_id;
 
@@ -30,7 +36,7 @@ function LyricInput({ setLyrics, lyrics }) {
         const song =
           res.data.message.body.track_list[randomIndex].track.track_name;
 
-        getTrackLyrics();
+        // getTrackLyrics();
         async function getTrackLyrics() {
           try {
             const newRes = await axios.get(
