@@ -14,34 +14,34 @@ function fixer(str) {
 function LyricInput({ setLyrics, lyrics }) {
   async function getTrackId(e) {
     e.preventDefault();
-    const randomPage = Math.ceil(Math.random() * 10);
     const randomIndex = Math.floor(Math.random() * 10);
     if (e.target[0].value)
       try {
-        const res = await axios.get('/api', {
+        const res = await axios.get('/track', {
           params: {
             userInput: e.target[0].value,
           },
         });
-        // const res = await axios.get(
-        //   `http://api.musixmatch.com/ws/1.1/track.search?q_lyrics=${e.target[0].value}&page=${randomPage}&apikey=${process.env.REACT_APP_MM_KEY}`
-        // );
-        console.log('RES 👉', res);
+
         const trackId =
           res.data.message.body.track_list[randomIndex].track.track_id;
-
         const artist =
           res.data.message.body.track_list[randomIndex].track.artist_name;
-
         const song =
           res.data.message.body.track_list[randomIndex].track.track_name;
 
-        // getTrackLyrics();
+        console.log('trackId inside func 1️⃣', trackId);
+
+        getTrackLyrics();
         async function getTrackLyrics() {
           try {
-            const newRes = await axios.get(
-              `http://api.musixmatch.com/ws/1.1/track.snippet.get?track_id=${trackId}&apikey=${process.env.REACT_APP_MM_KEY}`
-            );
+            console.log('trackId inside func 2️⃣', trackId);
+            const newRes = await axios.get('/lyrics', {
+              params: {
+                trackId: trackId,
+              },
+            });
+
             const snippet = newRes.data.message.body.snippet.snippet_body;
             const fixedSnippet = fixer(snippet);
             const newArr = [
