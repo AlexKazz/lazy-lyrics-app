@@ -30,8 +30,6 @@ Enter a word, and get back a lyric snippet from a real song.
 
 ## How It Works
 
----
-
 • Lazy Lyrics uses the <a href="https://developer.musixmatch.com/">Musixmatch API</a> to grab lyric snippets based on text input.
 <br/>
 • Due to API method parameter and data limitations, this process must be done in two separate API calls.
@@ -51,8 +49,6 @@ _As this app is currently for personal use_ (not financed 🤷‍♂️), _it is
 
 ## How To Use
 
----
-
 • Type in a word.
 <br/>
 • Get back a lyric 😎
@@ -70,8 +66,6 @@ _As this app is currently for personal use_ (not financed 🤷‍♂️), _it is
 
 ## Run Locally
 
----
-
 Getting started is easy! Just follow the steps below to get a local copy up and running.
 <br/>
 _You will need to create a (free) Musixmatch account for your own API key_.
@@ -82,7 +76,7 @@ _You will need to create a (free) Musixmatch account for your own API key_.
   ```sh
   npm install
   ```
-- musixmatch account
+- Musixmatch account
 
 ### Installation
 
