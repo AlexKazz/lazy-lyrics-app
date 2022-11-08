@@ -1,8 +1,7 @@
-import React, { useState, Fragment } from 'react';
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from './components/About';
-import GenreButtons from './components/GenreButtons';
 import LyricInput from './components/LyricInput';
 import UserLyrics from './components/UserLyrics';
 import Footer from './components/Footer';

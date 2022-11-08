@@ -30,12 +30,9 @@ function LyricInput({ setLyrics, lyrics }) {
         const song =
           res.data.message.body.track_list[randomIndex].track.track_name;
 
-        console.log('trackId inside func 1️⃣', trackId);
-
         getTrackLyrics();
         async function getTrackLyrics() {
           try {
-            console.log('trackId inside func 2️⃣', trackId);
             const newRes = await axios.get('/lyrics', {
               params: {
                 trackId: trackId,
