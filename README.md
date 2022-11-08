@@ -73,6 +73,8 @@ _As this app is currently for personal use_ (not financed 🤷‍♂️), _it is
 ---
 
 Getting started is easy! Just follow the steps below to get a local copy up and running.
+<br/>
+_You will need to create a (free) Musixmatch account for your own API key_.
 
 ### Prerequisites
 
@@ -80,6 +82,7 @@ Getting started is easy! Just follow the steps below to get a local copy up and 
   ```sh
   npm install
   ```
+- musixmatch account
 
 ### Installation
 
@@ -91,15 +94,19 @@ Getting started is easy! Just follow the steps below to get a local copy up and 
    ```sh
    npm install
    ```
-3. Start the express server
+3. Create .env file in root folder containing the following:
+   ```sh
+   MY_KEY=<your musixmatch api key>
+   ```
+4. Start the express server
    ```js
    node server
    ```
-4. Start the react dev server
+5. Start the react dev server
    ```js
    npm run start
    ```
-5. Open the app in your browser
+6. Open the app in your browser
    ```sh
     http://localhost:3000/
    ```
