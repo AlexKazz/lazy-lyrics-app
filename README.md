@@ -92,15 +92,11 @@ _You will need to create a (free) Musixmatch account for your own API key_.
    ```sh
    MY_KEY=<your musixmatch api key>
    ```
-4. Start the express server
+4. Start the servers
    ```js
-   node server
+   npm run dev
    ```
-5. Start the react dev server
-   ```js
-   npm run start
-   ```
-6. Open the app in your browser
+5. Open the app in your browser
    ```sh
     http://localhost:3000/
    ```
