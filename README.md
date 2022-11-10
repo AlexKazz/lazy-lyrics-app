@@ -6,6 +6,10 @@
 <h1 align="center">Lazy Lyrics</h1>
 
 <p align="center">
+<a href="https://www.lazy-lyrics.io/">www.lazy-lyrics.io</a>
+</p>
+
+<p align="center">
 Do you enjoy writing lyrics, but struggle with writer's block?
 Or maybe you just want to write lyrics faster?
 <br />
