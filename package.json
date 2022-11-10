@@ -1,6 +1,9 @@
 {
   "name": "lazy-lyrics-app",
   "version": "0.1.0",
+  "engines": {
+    "node": "16.x"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -45,10 +48,10 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.13",
     "concurrently": "^7.5.0",
     "postcss": "^8.4.18",
-    "tailwindcss": "^3.1.8"
+    "tailwindcss": "^3.2.3"
   },
   "proxy": "http://localhost:4000"
 }
