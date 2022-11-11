@@ -11,9 +11,9 @@ function App() {
 
   return (
     <BrowserRouter>
-      <main className='bg-hero bg-no-repeat bg-cover flex flex-col w-screen h-screen min-h-fit min-w-fit max-h-fit'>
+      <main className='bg-hero bg-no-repeat bg-cover flex flex-col w-screen h-screen min-w-fit min-h-fit'>
         <Navbar />
-        <div className='flex flex-col items-center grow mb-60 min-w-fit'>
+        <div className='flex flex-col items-center grow mb-60'>
           <Routes>
             <Route
               exact
