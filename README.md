@@ -30,6 +30,8 @@ Enter a word, and get back a lyric snippet from a real song.
 
 - [How It Works](#how-it-works)
 - [How To Use](#how-to-use)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
 - [Run Locally](#run-locally)
 
 ## How It Works
@@ -67,6 +69,30 @@ _As this app is currently for personal use_ (not financed 🤷‍♂️), _it is
 <br/>
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+## Roadmap
+
+- [x] Build the UI
+- [x] Develop the API logic
+- [x] Write some weird lyrics
+- [ ] Fix various grammatical errors in API responses
+- [ ] Replace API calls with AI generated lyrics
+    - [ ] Build the machine learning model
+
+<p align="right">(<a href="#table-of-contents">back to top</a>)</p>
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 ## Run Locally
 
