@@ -12,9 +12,9 @@ function fixer(str) {
 }
 
 function LyricInput({ setLyrics, lyrics }) {
+  let randomIndex = Math.floor(Math.random() * 10);
   async function getTrackId(e) {
     e.preventDefault();
-    let randomIndex = Math.floor(Math.random() * 10);
     if (e.target[0].value)
       try {
         const res = await axios.get('/track', {

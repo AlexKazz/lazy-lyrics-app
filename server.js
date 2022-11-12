@@ -6,9 +6,8 @@ const app = express();
 const port = 4000;
 const axios = require('axios');
 
-let randomPage = Math.ceil(Math.random() * 10);
-
 app.get('/track', async (req, res, next) => {
+  let randomPage = Math.ceil(Math.random() * 10);
   const userInput = req.query.userInput;
 
   const response = await axios.get(
