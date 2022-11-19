@@ -48,7 +48,7 @@ function LyricInput() {
         const song =
           res.data.message.body.track_list[randomIndex].track.track_name;
 
-        // getTrackLyrics();
+        getTrackLyrics();
         async function getTrackLyrics() {
           try {
             const newRes = await axios.get('/lyrics', {
@@ -59,18 +59,16 @@ function LyricInput() {
 
             const snippet = newRes.data.message.body.snippet.snippet_body;
             const fixedSnippet = fixer(snippet);
+            dispatch(
+              add({
+                id: uuidv4(),
+                snippet: fixedSnippet,
+                song: song,
+                artist: artist,
+                prompt: e.target[0].value,
+              })
+            );
 
-            // const newArr = [
-            //   ...lyrics,
-            //   {
-            //     id: uuidv4(),
-            //     lyric: fixedSnippet,
-            //     song: song,
-            //     artist: artist,
-            //     prompt: e.target[0].value,
-            //   },
-            // ];
-            // setLyrics(newArr);
             e.target[0].value = '';
           } catch (err) {
             console.log(err);
@@ -91,18 +89,18 @@ function LyricInput() {
         />
         <input type='submit' value='' />
         <button
-          onClick={() =>
-            dispatch(
-              add({
-                id: uuidv4(),
-                snippet: 'penis snippet',
-                song: 'song!',
-                artist: 'artist!!!',
-                prompt: 'your prompty wompty',
-              })
-            )
-          }
-          // onClick={() => getTrackId}
+          onClick={() => getTrackId}
+          // onClick={() =>
+          //   dispatch(
+          //     add({
+          //       id: uuidv4(),
+          //       snippet: 'fixedSnippet',
+          //       song: 'song',
+          //       artist: 'artist',
+          //       prompt: 'e.target[0].value',
+          //     })
+          //   )
+          // }
           className='bg-white shadow-lg bg-opacity-95 border border-slate-400 px-2 py-1 my-5 rounded-sm hover:bg-slate-100'
         >
           Submit

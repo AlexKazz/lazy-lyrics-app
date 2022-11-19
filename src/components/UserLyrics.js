@@ -5,6 +5,10 @@ import { add, remove, selectLyrics } from './lyricsSlice';
 function UserLyrics() {
   const lyrics = useSelector(selectLyrics);
 
+  useEffect(() => {
+    console.log(lyrics[4].artist);
+  });
+
   const deleteLyric = (lyricId) => {
     // let newArr = lyrics.filter((lyric) => lyricId !== lyric.id);
     // setLyrics(newArr);
@@ -15,7 +19,7 @@ function UserLyrics() {
       {lyrics
         ? lyrics.map((lyric) => (
             <div key={lyric.id} className='py-1 group'>
-              <p className='group-hover:hidden'>{lyric.lyric}</p>
+              <p className='group-hover:hidden'>{lyric.snippet}</p>
               <div className='hidden group-hover:block hover:bg-slate-200'>
                 <p className='italic'>{lyric.prompt}</p>
                 <p>
