@@ -7,7 +7,7 @@ export const lyricsSlice = createSlice({
   initialState,
   reducers: {
     clear: (state) => {
-      // state.state = []
+      return [];
     },
     add: (state, action) => {
       state.push({

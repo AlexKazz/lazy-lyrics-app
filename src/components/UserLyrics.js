@@ -5,10 +5,6 @@ import { add, remove, selectLyrics } from './lyricsSlice';
 function UserLyrics() {
   const lyrics = useSelector(selectLyrics);
 
-  useEffect(() => {
-    console.log(lyrics[4].artist);
-  });
-
   const deleteLyric = (lyricId) => {
     // let newArr = lyrics.filter((lyric) => lyricId !== lyric.id);
     // setLyrics(newArr);
