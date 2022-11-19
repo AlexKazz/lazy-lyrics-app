@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import lyricsReducer from '../features/lyrics/lyricsSlice';
+import lyricsReducer from '../components/lyricsSlice';
 
 export const store = configureStore({
   reducer: {

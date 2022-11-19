@@ -7,7 +7,7 @@ import UserLyrics from './components/UserLyrics';
 import Footer from './components/Footer';
 
 function App() {
-  const [lyrics, setLyrics] = useState('');
+  // const [lyrics, setLyrics] = useState('');
 
   return (
     <BrowserRouter>
@@ -20,9 +20,9 @@ function App() {
               path='/'
               element={
                 <>
-                  <LyricInput lyrics={lyrics} setLyrics={setLyrics} />
-                  <UserLyrics lyrics={lyrics} setLyrics={setLyrics} />
-                  <Footer lyrics={lyrics} setLyrics={setLyrics} />
+                  <LyricInput /* lyrics={lyrics} setLyrics={setLyrics}*/ />
+                  <UserLyrics /* lyrics={lyrics} setLyrics={setLyrics}*/ />
+                  <Footer /* lyrics={lyrics} setLyrics={setLyrics}*/ />
                 </>
               }
             />

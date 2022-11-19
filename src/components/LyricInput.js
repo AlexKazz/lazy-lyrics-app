@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { add, remove, selectLyrics } from './lyricsSlice';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
@@ -11,7 +13,13 @@ function fixer(str) {
   return str;
 }
 
-function LyricInput({ setLyrics, lyrics }) {
+function LyricInput() {
+  const lyricsState = useSelector(selectLyrics);
+  // const [lyrics, setLyrics] = useState(lyricsState);
+  useEffect(() => {
+    console.log(lyricsState);
+  }, []);
+
   let randomIndex = Math.floor(Math.random() * 10);
   async function getTrackId(e) {
     e.preventDefault();
@@ -41,17 +49,18 @@ function LyricInput({ setLyrics, lyrics }) {
 
             const snippet = newRes.data.message.body.snippet.snippet_body;
             const fixedSnippet = fixer(snippet);
-            const newArr = [
-              ...lyrics,
-              {
-                id: uuidv4(),
-                lyric: fixedSnippet,
-                song: song,
-                artist: artist,
-                prompt: e.target[0].value,
-              },
-            ];
-            setLyrics(newArr);
+
+            // const newArr = [
+            //   ...lyrics,
+            //   {
+            //     id: uuidv4(),
+            //     lyric: fixedSnippet,
+            //     song: song,
+            //     artist: artist,
+            //     prompt: e.target[0].value,
+            //   },
+            // ];
+            // setLyrics(newArr);
             e.target[0].value = '';
           } catch (err) {
             console.log(err);
