@@ -1,38 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  id: '',
-  lyric: '',
-  song: '',
-  artist: '',
-  prompt: '',
-};
+const initialState = [];
 
 export const lyricsSlice = createSlice({
   name: 'lyrics',
   initialState,
   reducers: {
     clear: (state) => {
-      state.id = '';
-      state.lyric = '';
-      state.song = '';
-      state.artist = '';
-      state.prompt = '';
+      // state.state = []
     },
     add: (state, action) => {
-      state.id += action.payload.id;
-      state.lyric += action.payload.lyric;
-      state.song += action.payload.song;
-      state.artist += action.payload.artist;
-      state.prompt += action.payload.prompt;
+      state.push({
+        id: action.payload.id,
+        snippet: action.payload.snippet,
+        song: action.payload.song,
+        artist: action.payload.artist,
+        prompt: action.payload.prompt,
+      });
     },
-    remove: (state, action) => {
-      state.id -= action.payload.id;
-      state.lyric -= action.payload.lyric;
-      state.song -= action.payload.song;
-      state.artist -= action.payload.artist;
-      state.prompt -= action.payload.prompt;
-    },
+    remove: (state, action) => {},
   },
 });
 

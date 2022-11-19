@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { add, remove, selectLyrics } from './lyricsSlice';
 
-function UserLyrics({ lyrics, setLyrics }) {
+function UserLyrics() {
+  const lyrics = useSelector(selectLyrics);
+
   const deleteLyric = (lyricId) => {
-    let newArr = lyrics.filter((lyric) => lyricId !== lyric.id);
-    setLyrics(newArr);
+    // let newArr = lyrics.filter((lyric) => lyricId !== lyric.id);
+    // setLyrics(newArr);
   };
 
   return (

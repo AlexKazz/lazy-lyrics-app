@@ -15,10 +15,20 @@ function fixer(str) {
 
 function LyricInput() {
   const lyricsState = useSelector(selectLyrics);
+  const dispatch = useDispatch();
   // const [lyrics, setLyrics] = useState(lyricsState);
-  useEffect(() => {
-    console.log(lyricsState);
-  }, []);
+  // useEffect(() => {
+  //   dispatch(
+  //     add({
+  //       id: uuidv4(),
+  //       snippet: 'penis snippet',
+  //       song: 'song!',
+  //       artist: 'artist!!!',
+  //       prompt: 'your prompty wompty',
+  //     })
+  //   );
+  //   console.log('lyricsState 👉', lyricsState);
+  // }, [lyricsState]);
 
   let randomIndex = Math.floor(Math.random() * 10);
   async function getTrackId(e) {
@@ -38,7 +48,7 @@ function LyricInput() {
         const song =
           res.data.message.body.track_list[randomIndex].track.track_name;
 
-        getTrackLyrics();
+        // getTrackLyrics();
         async function getTrackLyrics() {
           try {
             const newRes = await axios.get('/lyrics', {
@@ -81,7 +91,18 @@ function LyricInput() {
         />
         <input type='submit' value='' />
         <button
-          onClick={() => getTrackId}
+          onClick={() =>
+            dispatch(
+              add({
+                id: uuidv4(),
+                snippet: 'penis snippet',
+                song: 'song!',
+                artist: 'artist!!!',
+                prompt: 'your prompty wompty',
+              })
+            )
+          }
+          // onClick={() => getTrackId}
           className='bg-white shadow-lg bg-opacity-95 border border-slate-400 px-2 py-1 my-5 rounded-sm hover:bg-slate-100'
         >
           Submit
