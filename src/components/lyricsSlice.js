@@ -6,17 +6,11 @@ export const lyricsSlice = createSlice({
   name: 'lyrics',
   initialState,
   reducers: {
-    clear: (state) => {
+    clear: () => {
       return [];
     },
     add: (state, action) => {
-      state.push({
-        id: action.payload.id,
-        snippet: action.payload.snippet,
-        song: action.payload.song,
-        artist: action.payload.artist,
-        prompt: action.payload.prompt,
-      });
+      state.push(action.payload);
     },
     remove: (state, action) => {
       return state.filter((lyric) => lyric.id !== action.payload.id);
