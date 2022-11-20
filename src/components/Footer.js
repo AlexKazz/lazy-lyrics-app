@@ -3,14 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { clear } from './lyricsSlice';
 
 function Footer() {
-  const lyrics = useSelector((state) => state.lyrics.value);
+  const lyrics = useSelector((state) => state.lyrics);
   const dispatch = useDispatch();
   // const clearLyrics = () => {
   //   setLyrics('');
   // };
 
   const copyLyrics = (lyrics) => {
-    const array = lyrics.map((lyric) => lyric.lyric + '\n');
+    console.log(lyrics[0].snippet);
+    const array = lyrics.map((lyric) => lyric.snippet + '\n');
     const string = array.toString();
     const finalString = string.replaceAll(',', '');
     navigator.clipboard.writeText(finalString);
