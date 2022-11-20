@@ -1,15 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { add, remove, selectLyrics } from './lyricsSlice';
+import { remove, selectLyrics } from './lyricsSlice';
 
 function UserLyrics() {
   const lyrics = useSelector(selectLyrics);
   const dispatch = useDispatch();
-
-  // const deleteLyric = (lyricId) => {
-  //   let newArr = lyrics.filter((lyric) => lyricId !== lyric.id);
-  //   setLyrics(newArr);
-  // };
 
   return (
     <div className='font-fell w-2/3 shadow-md grow shadow-slate-400 overflow-y-auto max-h-0 min-h-full bg-white bg-opacity-95 rounded-sm py-9 px-10 text-center'>

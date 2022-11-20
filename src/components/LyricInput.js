@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { add, remove, selectLyrics } from './lyricsSlice';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { add } from './lyricsSlice';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
@@ -14,21 +14,7 @@ function fixer(str) {
 }
 
 function LyricInput() {
-  const lyricsState = useSelector(selectLyrics);
   const dispatch = useDispatch();
-  // const [lyrics, setLyrics] = useState(lyricsState);
-  // useEffect(() => {
-  //   dispatch(
-  //     add({
-  //       id: uuidv4(),
-  //       snippet: 'penis snippet',
-  //       song: 'song!',
-  //       artist: 'artist!!!',
-  //       prompt: 'your prompty wompty',
-  //     })
-  //   );
-  //   console.log('lyricsState 👉', lyricsState);
-  // }, [lyricsState]);
 
   let randomIndex = Math.floor(Math.random() * 10);
   async function getTrackId(e) {

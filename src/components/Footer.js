@@ -5,19 +5,13 @@ import { clear } from './lyricsSlice';
 function Footer() {
   const lyrics = useSelector((state) => state.lyrics);
   const dispatch = useDispatch();
-  // const clearLyrics = () => {
-  //   setLyrics('');
-  // };
 
   const copyLyrics = (lyrics) => {
-    console.log(lyrics[0].snippet);
     const array = lyrics.map((lyric) => lyric.snippet + '\n');
     const string = array.toString();
     const finalString = string.replaceAll(',', '');
     navigator.clipboard.writeText(finalString);
   };
-
-  // px-5 mx-10 py-2
 
   return (
     <div className='font-fell mt-6 pt-10 text-slate-500'>
