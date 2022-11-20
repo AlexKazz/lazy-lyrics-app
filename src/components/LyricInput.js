@@ -1,4 +1,6 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { add } from './lyricsSlice';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 
@@ -11,7 +13,9 @@ function fixer(str) {
   return str;
 }
 
-function LyricInput({ setLyrics, lyrics }) {
+function LyricInput() {
+  const dispatch = useDispatch();
+
   let randomIndex = Math.floor(Math.random() * 10);
   async function getTrackId(e) {
     e.preventDefault();
@@ -41,17 +45,16 @@ function LyricInput({ setLyrics, lyrics }) {
 
             const snippet = newRes.data.message.body.snippet.snippet_body;
             const fixedSnippet = fixer(snippet);
-            const newArr = [
-              ...lyrics,
-              {
+            dispatch(
+              add({
                 id: uuidv4(),
-                lyric: fixedSnippet,
+                snippet: fixedSnippet,
                 song: song,
                 artist: artist,
                 prompt: e.target[0].value,
-              },
-            ];
-            setLyrics(newArr);
+              })
+            );
+
             e.target[0].value = '';
           } catch (err) {
             console.log(err);
@@ -73,6 +76,17 @@ function LyricInput({ setLyrics, lyrics }) {
         <input type='submit' value='' />
         <button
           onClick={() => getTrackId}
+          // onClick={() =>
+          //   dispatch(
+          //     add({
+          //       id: uuidv4(),
+          //       snippet: 'fixedSnippet',
+          //       song: 'song',
+          //       artist: 'artist',
+          //       prompt: 'e.target[0].value',
+          //     })
+          //   )
+          // }
           className='bg-white shadow-lg bg-opacity-95 border border-slate-400 px-2 py-1 my-5 rounded-sm hover:bg-slate-100'
         >
           Submit

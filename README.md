@@ -21,8 +21,9 @@ Enter a word, and get back a lyric snippet from a real song.
 
 ### Built With
 
-- [![React.js][react.js]][react-url]
 - [![Javascript][javascript]][javascript-url]
+- [![React.js][react.js]][react-url]
+- [![Redux.js][redux.js]][redux.js-url]
 - [![Node.js][node.js]][node.js-url]
 - [![Express.js][express.js]][express.js-url]
 
@@ -75,9 +76,10 @@ _As this app is currently for personal use_ (not financed 🤷‍♂️), _it is
 - [x] Build the UI
 - [x] Develop the API logic
 - [x] Write some weird lyrics
+- [x] Replace React Hooks with Redux Toolkit
 - [ ] Fix various grammatical errors in API responses
 - [ ] Replace API calls with AI generated lyrics
-    - [ ] Build the machine learning model
+  - [ ] Build the machine learning model
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
 
@@ -149,3 +151,5 @@ _You will need to create a (free) Musixmatch account for your own API key_.
 [node.js-url]: https://nodejs.org/en/
 [express.js]: https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white
 [express.js-url]: https://expressjs.com/
+[redux.js]: https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white
+[redux.js-url]: https://redux-toolkit.js.org/

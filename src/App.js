@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from './components/About';
@@ -7,8 +7,6 @@ import UserLyrics from './components/UserLyrics';
 import Footer from './components/Footer';
 
 function App() {
-  const [lyrics, setLyrics] = useState('');
-
   return (
     <BrowserRouter>
       <main className='bg-hero bg-no-repeat bg-cover flex flex-col w-screen h-screen min-w-fit min-h-fit'>
@@ -20,9 +18,9 @@ function App() {
               path='/'
               element={
                 <>
-                  <LyricInput lyrics={lyrics} setLyrics={setLyrics} />
-                  <UserLyrics lyrics={lyrics} setLyrics={setLyrics} />
-                  <Footer lyrics={lyrics} setLyrics={setLyrics} />
+                  <LyricInput />
+                  <UserLyrics />
+                  <Footer />
                 </>
               }
             />
