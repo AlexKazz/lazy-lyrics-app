@@ -18,7 +18,9 @@ export const lyricsSlice = createSlice({
         prompt: action.payload.prompt,
       });
     },
-    remove: (state, action) => {},
+    remove: (state, action) => {
+      return state.filter((lyric) => lyric.id !== action.payload.id);
+    },
   },
 });
 
