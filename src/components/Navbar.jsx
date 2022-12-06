@@ -6,7 +6,7 @@ function Navbar() {
   const navigate = useNavigate();
 
   return (
-    <div className='font-fell flex text-slate-500 items-center mt-5 shadow-black drop-shadow-lg'>
+    <div className='font-fell flex text-slate-600 items-center mt-5 shadow-black drop-shadow-lg'>
       <button
         onClick={() => {
           navigate('/');

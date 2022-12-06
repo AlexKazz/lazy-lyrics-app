@@ -66,10 +66,10 @@ function LyricInput() {
   }
 
   return (
-    <div className='font-fell flex text-slate-500 shadow-black drop-shadow-lg'>
+    <div className='font-fell flex text-slate-600 shadow-black drop-shadow-lg'>
       <form onSubmit={getTrackId}>
         <input
-          className='mt-10 mr-2 rounded-sm p-1 shadow-md opacity-95 shadow-slate-400'
+          className='border border-slate-600 mt-10 mr-2 rounded-sm p-1 shadow-md opacity-95 shadow-slate-400'
           placeholder='Enter a word'
           type='text'
         />
@@ -87,7 +87,7 @@ function LyricInput() {
           //     })
           //   )
           // }
-          className='bg-white shadow-lg bg-opacity-95 border border-slate-400 px-2 py-1 my-5 rounded-sm hover:bg-slate-100'
+          className='border border-slate-600 bg-white shadow-lg bg-opacity-95 px-2 py-1 my-5 rounded-sm hover:bg-slate-100'
         >
           Submit
         </button>
