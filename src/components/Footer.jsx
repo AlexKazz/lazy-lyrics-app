@@ -1,17 +1,11 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { clear } from './lyricsSlice';
+import { copyLyrics } from '../utils/lyricFunctions';
 
 function Footer() {
   const lyrics = useSelector((state) => state.lyrics);
   const dispatch = useDispatch();
-
-  const copyLyrics = (lyrics) => {
-    const array = lyrics.map((lyric) => lyric.snippet + '\n');
-    const string = array.toString();
-    const finalString = string.replaceAll(',', '');
-    navigator.clipboard.writeText(finalString);
-  };
 
   return (
     <div className='font-fell mt-6 pt-10 text-slate-600'>
