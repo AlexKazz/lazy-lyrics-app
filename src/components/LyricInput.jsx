@@ -3,15 +3,7 @@ import { useDispatch } from 'react-redux';
 import { add } from './lyricsSlice';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
-
-function fixer(str) {
-  const punctuation = ['.', ',', '!', '?', ':', ';', '('];
-  for (const el of punctuation)
-    if (str.includes(el)) {
-      return str.substring(0, str.indexOf(el));
-    }
-  return str;
-}
+import { fixer } from '../utils/lyricFunctions';
 
 function LyricInput() {
   const dispatch = useDispatch();
