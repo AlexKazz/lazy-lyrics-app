@@ -19,7 +19,7 @@ function Footer() {
           Copy
         </button>
       </ToolTip>
-      <ToastContainer position='bottom-left' theme='colored' autoClose={1000} />
+      <ToastContainer position='bottom-left' theme='light' autoClose={1000} />
       <ToolTip tooltip='Delete all lyrics'>
         <button
           onClick={() => dispatch(clear())}
