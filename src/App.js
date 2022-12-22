@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import About from './components/About';
 import LyricInput from './components/LyricInput';
 import UserLyrics from './components/UserLyrics';
 import Footer from './components/Footer';
@@ -24,7 +23,6 @@ function App() {
                 </>
               }
             />
-            <Route exact path='/about' element={<About />} />
           </Routes>
         </div>
       </main>

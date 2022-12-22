@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route, NavLink, useNavigate } from 'react-router-dom';
-import About from './About';
 
 function Navbar() {
   const navigate = useNavigate();
@@ -18,13 +17,14 @@ function Navbar() {
       </button>
       <div className='flex'>
         <div className='mx-10 link link-underline link-underline-black hover:text-slate-400'>
-          <button
-            onClick={() => {
-              navigate('/about');
-            }}
+          <a
+            href='https://github.com/AlexKazz/lazy-lyrics-app'
+            target='_blank'
+            rel='noreferrer'
+            className='link link-underline  hover:text-slate-300'
           >
             About
-          </button>
+          </a>
         </div>
       </div>
     </div>
