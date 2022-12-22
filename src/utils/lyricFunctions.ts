@@ -1,13 +1,23 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const notify = (lyrics) => {
+interface LyricObject {
+  artist: string;
+  id: string;
+  prompt: string;
+  snippet: string;
+  song: string;
+}
+
+export interface LyricsArray extends Array<LyricObject> {}
+
+const notify = (lyrics: LyricsArray) => {
   lyrics.length
     ? toast.success('Lyrics Copied!')
     : toast.warn('Nothing to Copy!');
 };
 
-export const copyLyrics = (lyrics) => {
+export const copyLyrics = (lyrics: LyricsArray) => {
   const array = lyrics.map((lyric) => lyric.snippet + '\n');
   const string = array.toString();
   const finalString = string.replaceAll(',', '');
@@ -15,7 +25,7 @@ export const copyLyrics = (lyrics) => {
   notify(lyrics);
 };
 
-export const fixer = (str) => {
+export const fixer = (str: string) => {
   const punctuation = ['.', ',', '!', '?', ':', ';', '('];
   for (const el of punctuation)
     if (str.includes(el)) {
