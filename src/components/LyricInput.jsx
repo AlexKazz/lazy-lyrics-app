@@ -4,6 +4,7 @@ import { add } from './lyricsSlice';
 import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 import { fixer } from '../utils/lyricFunctions';
+import ToolTip from './ToolTip';
 
 function LyricInput() {
   const dispatch = useDispatch();
@@ -66,23 +67,14 @@ function LyricInput() {
           type='text'
         />
         <input type='submit' value='' />
-        <button
-          onClick={() => getTrackId}
-          // onClick={() =>
-          //   dispatch(
-          //     add({
-          //       id: uuidv4(),
-          //       snippet: 'fixedSnippet',
-          //       song: 'song',
-          //       artist: 'artist',
-          //       prompt: 'e.target[0].value',
-          //     })
-          //   )
-          // }
-          className='border border-slate-600 bg-white shadow-lg bg-opacity-95 px-2 py-1 my-5 rounded-sm hover:bg-slate-100'
-        >
-          Submit
-        </button>
+        <ToolTip tooltip='Submit word'>
+          <button
+            onClick={() => getTrackId}
+            className='border border-slate-600 bg-white shadow-lg bg-opacity-95 px-2 py-1 my-5 rounded-sm hover:bg-slate-100'
+          >
+            Submit
+          </button>
+        </ToolTip>
       </form>
     </div>
   );
