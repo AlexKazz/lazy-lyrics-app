@@ -10,7 +10,6 @@ function App() {
   const [theme, setTheme] = useState('bg-hero');
 
   const toggleTheme = () => {
-    console.log('theme', theme);
     if (theme === 'bg-hero') {
       setTheme('bg-darkHero');
     } else {
@@ -18,10 +17,10 @@ function App() {
     }
   };
 
-  useEffect(() => {
-    document.body.className = theme;
-    console.log('rerender');
-  }, [theme]);
+  // useEffect(() => {
+  //   document.body.className = theme;
+  //   console.log('rerender');
+  // }, [theme]);
 
   return (
     <BrowserRouter>
@@ -29,7 +28,6 @@ function App() {
         className={`${theme} bg-no-repeat bg-cover flex flex-col w-screen h-screen min-w-fit min-h-fit`}
       >
         <Navbar theme={theme} toggleTheme={toggleTheme} />
-
         <div className='flex flex-col items-center grow mb-60'>
           <Routes>
             <Route
