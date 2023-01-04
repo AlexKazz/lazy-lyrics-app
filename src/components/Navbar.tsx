@@ -1,8 +1,12 @@
 import { Routes, Route, NavLink, useNavigate } from 'react-router-dom';
 import ToolTip from './ToolTip';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSun } from '@fortawesome/free-solid-svg-icons';
+
 // import { toggleTheme } from '../utils/lyricFunctions';
 
-function Navbar({ toggleTheme }) {
+function Navbar({ theme, toggleTheme }) {
   const navigate = useNavigate();
 
   return (
@@ -28,7 +32,17 @@ function Navbar({ toggleTheme }) {
           </ToolTip>
         </div>
       </div>
-      {/* <button onClick={toggleTheme}>Toggle Theme</button> */}
+      <button onClick={toggleTheme}>
+        {theme === 'bg-hero' ? (
+          <ToolTip tooltip='Dark mode'>
+            <FontAwesomeIcon icon={faMoon} />
+          </ToolTip>
+        ) : (
+          <ToolTip tooltip='Light mode'>
+            <FontAwesomeIcon icon={faSun} />
+          </ToolTip>
+        )}
+      </button>
     </div>
   );
 }
