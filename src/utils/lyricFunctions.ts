@@ -33,3 +33,11 @@ export const fixer = (str: string) => {
     }
   return str;
 };
+
+// export const toggleTheme = (theme, setTheme) => {
+//   if (theme === 'light') {
+//     setTheme('dark');
+//   } else {
+//     setTheme('light');
+//   }
+// };

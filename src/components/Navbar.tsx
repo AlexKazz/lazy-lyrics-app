@@ -1,7 +1,8 @@
 import { Routes, Route, NavLink, useNavigate } from 'react-router-dom';
 import ToolTip from './ToolTip';
+// import { toggleTheme } from '../utils/lyricFunctions';
 
-function Navbar() {
+function Navbar({ toggleTheme }) {
   const navigate = useNavigate();
 
   return (
@@ -27,6 +28,7 @@ function Navbar() {
           </ToolTip>
         </div>
       </div>
+      {/* <button onClick={toggleTheme}>Toggle Theme</button> */}
     </div>
   );
 }

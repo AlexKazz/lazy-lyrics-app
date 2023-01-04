@@ -4,6 +4,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         hero: "url('/src/images/microphone1.png')",
+        darkHero: "url('/src/images/microphone2.png')",
       },
       fontFamily: {
         fell: ['Quicksand', 'sans-serif'],
