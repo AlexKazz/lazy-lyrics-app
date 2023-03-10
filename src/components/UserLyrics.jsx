@@ -56,13 +56,13 @@ console.log('data', data);
             </div>
           ))
         : null} */
-      <div className='font-fell shadow-md grow shadow-slate-400 overflow-y-auto max-h-0 min-h-full bg-white bg-opacity-95 rounded-sm py-9 px-10 text-center'>
+      <div className='font-fell shadow-md grow w-5/6 shadow-slate-400 overflow-y-auto max-h-0 min-h-full bg-white bg-opacity-95 rounded-sm text-center'>
         <table {...getTableProps()}>
-          <thead>
+          <thead className='bg-slate-300'>
             {headerGroups.map((headerGroup) => (
               <tr key={uuidv4()} {...headerGroup.getHeaderGroupProps}>
                 {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()}>
+                  <th className='py-3 border-2 border-slate-400 '{...column.getHeaderProps()}>
                     {column.render("Header")}
                   </th>
                 ))}
@@ -73,9 +73,9 @@ console.log('data', data);
             {rows.map((row) => {
               prepareRow(row);
               return (
-                <tr {...row.getRowProps()}>
+                <tr className='border-b-2 border-slate-300' {...row.getRowProps()}>
                   {row.cells.map((cell) => (
-                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    <td className='p-3 border-2'{...cell.getCellProps()}>{cell.render("Cell")}</td>
                   ))}
                 </tr>
               );
