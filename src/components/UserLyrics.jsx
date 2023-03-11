@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { remove, selectLyrics } from './lyricsSlice';
 import { v4 as uuidv4 } from 'uuid';
-import { useTable } from "react-table";
+import { useTable, useResizeColumns } from "react-table";
 
 function UserLyrics() {
   const lyrics = useSelector(selectLyrics);
@@ -14,10 +14,14 @@ function UserLyrics() {
       {
         Header: "Lyric",
         accessor: "snippet",
+        width: 300,
+        maxWidth: 300,
+        minWidth: 300
       },
       {
         Header: "Song",
         accessor: "song",
+        
       },
       {
         Header: "Artist",
@@ -26,6 +30,9 @@ function UserLyrics() {
       {
         Header: "Prompt",
         accessor: "prompt",
+        width: 75,
+        maxWidth: 75,
+        minWidth: 75
       },
       
     ],
@@ -33,7 +40,15 @@ function UserLyrics() {
   );
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data });
+  useTable(
+    {
+      columns,
+      data,
+      
+    },
+    
+    useResizeColumns
+  );
 console.log('data', data);
   return (
     // <div className='font-fell w-2/3 shadow-md grow shadow-slate-400 overflow-y-auto max-h-0 min-h-full bg-white bg-opacity-95 rounded-sm py-9 px-10 text-center'>
@@ -56,13 +71,13 @@ console.log('data', data);
             </div>
           ))
         : null} */
-      <div className='font-fell shadow-md grow w-5/6 shadow-slate-400 overflow-y-auto max-h-0 min-h-full bg-white bg-opacity-95 rounded-sm text-center'>
-        <table {...getTableProps()}>
-          <thead className='bg-slate-300'>
+      <div className='flex w-5/6 font-fell shadow-md shadow-slate-400 overflow-y-auto max-h-0 min-h-full bg-white bg-opacity-95 rounded-sm text-center'>
+        <table className='w-full h-32' {...getTableProps()}>
+          <thead>
             {headerGroups.map((headerGroup) => (
-              <tr key={uuidv4()} {...headerGroup.getHeaderGroupProps}>
+              <tr key={uuidv4()} className='bg-slate-200' {...headerGroup.getHeaderGroupProps}>
                 {headerGroup.headers.map((column) => (
-                  <th className='py-3 border-2 border-slate-400 '{...column.getHeaderProps()}>
+                  <th className='py-2 border-2 border-slate-300 flex-col justify-evenly' {...column.getHeaderProps({style: {minWidth: column.minWidth, width: column.width}})}>
                     {column.render("Header")}
                   </th>
                 ))}
@@ -73,9 +88,9 @@ console.log('data', data);
             {rows.map((row) => {
               prepareRow(row);
               return (
-                <tr className='border-b-2 border-slate-300' {...row.getRowProps()}>
+                <tr className='border-b-2 border-slate-100' {...row.getRowProps()}>
                   {row.cells.map((cell) => (
-                    <td className='p-3 border-2'{...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    <td className='p-2 border-2'{...cell.getCellProps()}>{cell.render("Cell")}</td>
                   ))}
                 </tr>
               );
