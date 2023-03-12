@@ -1,10 +1,10 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { add } from './lyricsSlice';
-import { v4 as uuidv4 } from 'uuid';
-import axios from 'axios';
-import { fixer } from '../utils/lyricFunctions';
-import ToolTip from './ToolTip';
+import React from "react";
+import { useDispatch } from "react-redux";
+import { add } from "./lyricsSlice";
+import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
+import { fixer } from "../utils/lyricFunctions";
+import ToolTip from "./ToolTip";
 
 function LyricInput() {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function LyricInput() {
     let randomIndex = Math.floor(Math.random() * 10);
     if (e.target[0].value)
       try {
-        const res = await axios.get('/track', {
+        const res = await axios.get("/track", {
           params: {
             userInput: e.target[0].value,
           },
@@ -30,7 +30,7 @@ function LyricInput() {
         getTrackLyrics();
         async function getTrackLyrics() {
           try {
-            const newRes = await axios.get('/lyrics', {
+            const newRes = await axios.get("/lyrics", {
               params: {
                 trackId: trackId,
               },
@@ -48,7 +48,7 @@ function LyricInput() {
               })
             );
 
-            e.target[0].value = '';
+            e.target[0].value = "";
           } catch (err) {
             console.log(err);
           }
@@ -59,18 +59,24 @@ function LyricInput() {
   }
 
   return (
-    <div className='font-fell flex text-slate-600 shadow-black drop-shadow-lg'>
-      <form onSubmit={getTrackId}>
+    <div className="font-fell m-5 flex-col text-slate-600 shadow-black drop-shadow-lg">
+      <p className="text-xl ">
+        Enter a word. Get back a lyric from a real song.
+      </p>
+      <form
+        onSubmit={getTrackId}
+        className="justify-center content-center flex"
+      >
         <input
-          className='border border-slate-600 mt-10 mr-2 rounded-sm p-1 shadow-md opacity-95 shadow-slate-400'
-          placeholder='Enter a word'
-          type='text'
+          className="border h-8 border-slate-600 mt-5 mr-2 rounded-sm p-1 shadow-md opacity-95 shadow-slate-400"
+          placeholder="Enter a word"
+          type="text"
         />
-        <input type='submit' value='' />
-        <ToolTip tooltip='Submit word'>
+        <input type="submit" value="" />
+        <ToolTip tooltip="Submit word">
           <button
             onClick={() => getTrackId}
-            className='border border-slate-600 bg-white shadow-lg bg-opacity-95 px-2 py-1 my-5 rounded-sm hover:bg-slate-100'
+            className="border border-slate-600 bg-white shadow-lg bg-opacity-95 px-2 py-1 my-5 rounded-sm hover:bg-slate-100"
           >
             Submit
           </button>
