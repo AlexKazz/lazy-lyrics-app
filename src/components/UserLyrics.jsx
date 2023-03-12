@@ -68,13 +68,13 @@ function UserLyrics() {
             </div>
           ))
         : null} */
-    <div className="flex w-5/6 shadow-md shadow-slate-400 overflow-y-auto max-h-0 min-h-full bg-white bg-opacity-95 rounded-lg text-center">
+    <div className="flex w-3/4 shadow-md shadow-slate-400 overflow-y-auto max-h-0 min-h-full bg-white bg-opacity-100 rounded-lg text-center">
       <table className="w-full h-32" {...getTableProps()}>
         <thead className="sticky top-0">
           {headerGroups.map((headerGroup) => (
             <tr
               key={uuidv4()}
-              className="bg-slate-200 font-fell "
+              className="bg-slate-300 font-fell text-lg"
               {...headerGroup.getHeaderGroupProps}
             >
               {headerGroup.headers.map((column) => (
@@ -94,7 +94,10 @@ function UserLyrics() {
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr className="border-2 border-slate-200" {...row.getRowProps()}>
+              <tr
+                className="hover:bg-gray-100 even:bg-slate-100"
+                {...row.getRowProps()}
+              >
                 {row.cells.map((cell) => (
                   <td className="p-2" {...cell.getCellProps()}>
                     {cell.render("Cell")}

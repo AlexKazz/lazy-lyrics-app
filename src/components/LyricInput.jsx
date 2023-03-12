@@ -73,14 +73,13 @@ function LyricInput() {
           type="text"
         />
         <input type="submit" value="" />
-        <ToolTip tooltip="Submit word">
-          <button
-            onClick={() => getTrackId}
-            className="border border-slate-600 bg-white shadow-lg bg-opacity-95 px-2 py-1 my-5 rounded-sm hover:bg-slate-100"
-          >
-            Submit
-          </button>
-        </ToolTip>
+
+        <button
+          onClick={() => getTrackId}
+          className="border border-slate-600 bg-white shadow-lg bg-opacity-95 px-2 py-1 my-5 rounded-sm hover:bg-slate-100"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
