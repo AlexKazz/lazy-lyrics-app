@@ -46,7 +46,7 @@ function UserLyrics() {
 
       useResizeColumns
     );
-  console.log("data", data);
+
   return (
     // <div className='font-fell w-2/3 shadow-md grow shadow-slate-400 overflow-y-auto max-h-0 min-h-full bg-white bg-opacity-95 rounded-sm py-9 px-10 text-center'>
     /* {lyrics
@@ -94,12 +94,9 @@ function UserLyrics() {
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr
-                className="hover:bg-gray-100 even:bg-slate-100"
-                {...row.getRowProps()}
-              >
+              <tr className="even:bg-slate-100" {...row.getRowProps()}>
                 {row.cells.map((cell) => (
-                  <td className="p-2" {...cell.getCellProps()}>
+                  <td className="p-2 group/edit" {...cell.getCellProps()}>
                     {cell.render("Cell")}
                   </td>
                 ))}

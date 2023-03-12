@@ -44,7 +44,7 @@ function LyricInput() {
                 snippet: fixedSnippet,
                 song: song,
                 artist: artist,
-                prompt: e.target[0].value,
+                prompt: `"` + e.target[0].value + `"`,
               })
             );
 
@@ -60,7 +60,7 @@ function LyricInput() {
 
   return (
     <div className="font-fell m-5 flex-col text-slate-600 shadow-black drop-shadow-lg">
-      <p className="text-xl ">
+      <p className="text-base italic">
         Enter a word. Get back a lyric from a real song.
       </p>
       <form
