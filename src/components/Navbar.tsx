@@ -33,6 +33,7 @@ function Navbar({ theme, toggleTheme }) {
           </ToolTip>
         )}
       </button>
+      
     </div>
   );
 }
