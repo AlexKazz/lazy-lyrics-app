@@ -73,11 +73,11 @@ console.log('data', data);
         : null} */
       <div className='flex w-5/6 font-fell shadow-md shadow-slate-400 overflow-y-auto max-h-0 min-h-full bg-white bg-opacity-95 rounded-sm text-center'>
         <table className='w-full h-32' {...getTableProps()}>
-          <thead>
+          <thead className='sticky top-0'>
             {headerGroups.map((headerGroup) => (
               <tr key={uuidv4()} className='bg-slate-200' {...headerGroup.getHeaderGroupProps}>
                 {headerGroup.headers.map((column) => (
-                  <th className='py-2 border-2 border-slate-300 flex-col justify-evenly' {...column.getHeaderProps({style: {minWidth: column.minWidth, width: column.width}})}>
+                  <th className='py-2 flex-col justify-evenly' {...column.getHeaderProps({style: {minWidth: column.minWidth, width: column.width}})}>
                     {column.render("Header")}
                   </th>
                 ))}
@@ -88,9 +88,9 @@ console.log('data', data);
             {rows.map((row) => {
               prepareRow(row);
               return (
-                <tr className='border-b-2 border-slate-100' {...row.getRowProps()}>
+                <tr className='border-2 border-slate-200' {...row.getRowProps()}>
                   {row.cells.map((cell) => (
-                    <td className='p-2 border-2'{...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    <td className='p-2'{...cell.getCellProps()}>{cell.render("Cell")}</td>
                   ))}
                 </tr>
               );
