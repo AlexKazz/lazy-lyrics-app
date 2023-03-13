@@ -107,7 +107,7 @@ function UserLyrics({ theme }) {
               <tr
                 className={`${
                   theme === "bg-hero"
-                    ? "text-slate-500 bg-white even:bg-slate-100"
+                    ? "text-slate-700 bg-white even:bg-slate-100"
                     : "text-white even:bg-slate-400"
                 }`}
                 {...row.getRowProps()}
