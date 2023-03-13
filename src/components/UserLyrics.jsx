@@ -69,7 +69,7 @@ function UserLyrics({ theme }) {
           ))
         : null} */
     <div
-      className={`flex w-2/3 min-w-fit grow mx-10 shadow-md shadow-slate-400 overflow-y-auto max-h-0 min-h-full ${
+      className={`flex w-2/3 grow shadow-md shadow-slate-400 overflow-y-auto max-h-0 min-h-full ${
         theme === "bg-hero"
           ? "text-slate-500 bg-white"
           : "text-white bg-slate-500"
