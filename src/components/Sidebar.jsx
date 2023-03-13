@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
 
-const Sidebar = () => {
+const Sidebar = ({ theme }) => {
   const [showSidebar, setShowSidebar] = useState(false);
-
+  console.log(theme);
   return (
     <>
       {showSidebar ? (
         <button
-          className="flex text-3xl text-black items-center cursor-pointer fixed right-10 top-6 z-50"
+          className={`flex text-3xl ${
+            theme === "bg-hero" ? "bg-white" : "bg-slate-600 text-white"
+          } items-center cursor-pointer fixed right-10 top-6 z-50`}
           onClick={() => setShowSidebar(!showSidebar)}
         >
           x
@@ -22,15 +24,21 @@ const Sidebar = () => {
           width="40"
           height="40"
         >
-          <AiOutlineQuestionCircle className="text-6xl text-slate-500" />
+          <AiOutlineQuestionCircle
+            className={`text-6xl ${
+              theme === "bg-hero" ? "text-slate-500" : "text-white"
+            }`}
+          />
         </svg>
       )}
 
       <div
-        className={`overflow-y-auto shadow-md shadow-slate-400 top-0 right-0 w-[35vw] bg-white  p-10 pl-20 text-white fixed h-full z-40 ease-in-out duration-300
+        className={`overflow-y-auto shadow-md shadow-slate-400 top-0 right-0 w-[35vw] ${
+          theme === "bg-hero" ? "bg-white" : "bg-slate-600 text-white"
+        }  p-10 pl-20 fixed h-full z-40 ease-in-out duration-300
         ${showSidebar ? "translate-x-0 " : "translate-x-full"}`}
       >
-        <h3 className="mt-10 text-lg font-fell text-black">
+        <h3 className="mt-10 text-lg font-fell">
           <p className="mb-5">
             • Lazy Lyrics uses the Musixmatch API to grab lyric snippets based
             on text input.
