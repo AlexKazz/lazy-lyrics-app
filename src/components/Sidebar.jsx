@@ -9,7 +9,7 @@ const Sidebar = ({ theme }) => {
       {showSidebar ? (
         <button
           className={`flex text-3xl ${
-            theme === "bg-hero" ? "bg-white" : "bg-slate-600 text-white"
+            theme === "bg-hero" ? "bg-slate-100" : "bg-slate-600 text-white"
           } items-center cursor-pointer fixed right-10 top-6 z-50`}
           onClick={() => setShowSidebar(!showSidebar)}
         >
@@ -33,8 +33,8 @@ const Sidebar = ({ theme }) => {
       )}
 
       <div
-        className={`overflow-y-auto shadow-md shadow-slate-400 top-0 right-0 w-[35vw] ${
-          theme === "bg-hero" ? "bg-white" : "bg-slate-600 text-white"
+        className={`overflow-y-auto shadow-md shadow-slate-400 top-0 right-0 w-2/5 ${
+          theme === "bg-hero" ? "bg-slate-100" : "bg-slate-600 text-white"
         }  p-10 pl-20 fixed h-full z-40 ease-in-out duration-300
         ${showSidebar ? "translate-x-0 " : "translate-x-full"}`}
       >
