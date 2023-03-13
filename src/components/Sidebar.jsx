@@ -3,7 +3,7 @@ import { AiOutlineQuestionCircle } from "react-icons/ai";
 
 const Sidebar = ({ theme }) => {
   const [showSidebar, setShowSidebar] = useState(false);
-  console.log(theme);
+
   return (
     <>
       {showSidebar ? (
