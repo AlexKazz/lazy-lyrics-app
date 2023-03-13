@@ -4,7 +4,7 @@ import { remove, selectLyrics } from "./lyricsSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useTable, useResizeColumns } from "react-table";
 
-function UserLyrics() {
+function UserLyrics({ theme }) {
   const lyrics = useSelector(selectLyrics);
   const dispatch = useDispatch();
 
@@ -68,13 +68,23 @@ function UserLyrics() {
             </div>
           ))
         : null} */
-    <div className="flex w-3/4 shadow-md shadow-slate-400 overflow-y-auto max-h-0 min-h-full bg-white bg-opacity-100 rounded-lg text-center">
+    <div
+      className={`flex w-3/4 shadow-md shadow-slate-400 overflow-y-auto max-h-0 min-h-full ${
+        theme === "bg-hero"
+          ? "text-slate-500 bg-white"
+          : "text-white bg-slate-500"
+      } bg-opacity-100 rounded-lg text-center`}
+    >
       <table className="w-full h-32" {...getTableProps()}>
         <thead className="sticky top-0">
           {headerGroups.map((headerGroup) => (
             <tr
               key={uuidv4()}
-              className="bg-slate-300 font-fell text-lg"
+              className={`${
+                theme === "bg-hero"
+                  ? "bg-slate-300 text-slate-600"
+                  : "text-white bg-slate-700"
+              } font-fell text-lg`}
               {...headerGroup.getHeaderGroupProps}
             >
               {headerGroup.headers.map((column) => (
@@ -94,7 +104,14 @@ function UserLyrics() {
           {rows.map((row) => {
             prepareRow(row);
             return (
-              <tr className="even:bg-slate-100" {...row.getRowProps()}>
+              <tr
+                className={`${
+                  theme === "bg-hero"
+                    ? "text-slate-500 bg-white even:bg-slate-100"
+                    : "text-white even:bg-slate-400"
+                }`}
+                {...row.getRowProps()}
+              >
                 {row.cells.map((cell) => (
                   <td className="p-2 group/edit" {...cell.getCellProps()}>
                     {cell.render("Cell")}

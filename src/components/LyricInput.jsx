@@ -6,7 +6,7 @@ import axios from "axios";
 import { fixer } from "../utils/lyricFunctions";
 import ToolTip from "./ToolTip";
 
-function LyricInput() {
+function LyricInput({ theme }) {
   const dispatch = useDispatch();
 
   async function getTrackId(e) {
@@ -60,7 +60,11 @@ function LyricInput() {
 
   return (
     <div className="font-fell m-5 flex-col text-slate-600 shadow-black drop-shadow-lg">
-      <p className="text-base italic">
+      <p
+        className={`text-base italic ${
+          theme === "bg-hero" ? "text-slate-500" : "text-white"
+        }`}
+      >
         Enter a word. Get back a lyric from a real song.
       </p>
       <form

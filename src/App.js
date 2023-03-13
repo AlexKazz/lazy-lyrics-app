@@ -31,8 +31,8 @@ function App() {
               path="/"
               element={
                 <>
-                  <LyricInput />
-                  <UserLyrics />
+                  <LyricInput theme={theme} />
+                  <UserLyrics theme={theme} />
                   <Footer />
                 </>
               }

@@ -8,7 +8,9 @@ import Sidebar from './Sidebar';
 
 function Navbar({ theme, toggleTheme }) {
   return (
-    <div className='font-fell flex text-slate-500 items-center mt-5 shadow-black drop-shadow-lg'>
+    <div className={`font-fell flex ${
+      theme === "bg-hero" ? "text-slate-500" : "text-white"
+    } items-center mt-5 shadow-black drop-shadow-lg`}>
       
       <div className='text-3xl ml-8'>Lazy Lyrics</div>
       <div className='flex'>
