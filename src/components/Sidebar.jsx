@@ -22,7 +22,7 @@ const Sidebar = () => {
           width="40"
           height="40"
         >
-          <AiOutlineQuestionCircle className="text-6xl" />
+          <AiOutlineQuestionCircle className="text-6xl text-slate-500" />
         </svg>
       )}
 
