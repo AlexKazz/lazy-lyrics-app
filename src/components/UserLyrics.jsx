@@ -76,7 +76,7 @@ function UserLyrics({ theme }) {
       } bg-opacity-100 rounded-lg text-center`}
     >
       <table className="w-full h-32" {...getTableProps()}>
-        <thead className="sticky top-0">
+        <thead className="sticky top-0 ">
           {headerGroups.map((headerGroup) => (
             <tr
               key={uuidv4()}
@@ -89,7 +89,7 @@ function UserLyrics({ theme }) {
             >
               {headerGroup.headers.map((column) => (
                 <th
-                  className="py-2 flex-col justify-evenly"
+                  className="py-2 px-5 flex-col justify-evenly border-x border-slate-200"
                   {...column.getHeaderProps({
                     style: { minWidth: column.minWidth, width: column.width },
                   })}
@@ -113,7 +113,10 @@ function UserLyrics({ theme }) {
                 {...row.getRowProps()}
               >
                 {row.cells.map((cell) => (
-                  <td className="p-2 group/edit" {...cell.getCellProps()}>
+                  <td
+                    className="p-2 group/edit border-x border-slate-200"
+                    {...cell.getCellProps()}
+                  >
                     {cell.render("Cell")}
                   </td>
                 ))}
