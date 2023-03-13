@@ -69,13 +69,13 @@ function UserLyrics({ theme }) {
           ))
         : null} */
     <div
-      className={`flex w-3/4 min-w-fit mx-10 shadow-md shadow-slate-400 overflow-y-auto max-h-0 min-h-full ${
+      className={`flex w-3/4 min-w-fit max-w-0 grow mx-10 shadow-md shadow-slate-400 overflow-y-auto max-h-0 min-h-full ${
         theme === "bg-hero"
           ? "text-slate-500 bg-white"
           : "text-white bg-slate-500"
       } bg-opacity-100 rounded-lg text-center`}
     >
-      <table className="w-full h-32" {...getTableProps()}>
+      <table className="w-full h-28" {...getTableProps()}>
         <thead className="sticky top-0 ">
           {headerGroups.map((headerGroup) => (
             <tr
