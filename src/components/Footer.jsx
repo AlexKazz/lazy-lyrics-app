@@ -14,7 +14,7 @@ function Footer() {
       <ToolTip tooltip="Copy all lyrics to clipboard">
         <button
           onClick={() => copyLyrics(lyrics)}
-          className="shadow-lg bg-opacity-95 bg-white border border-slate-600 px-5 py-1 mr-5 rounded-sm hover:bg-slate-100"
+          className="shadow-lg bg-opacity-95 bg-white border border-slate-600 px-5 py-1 mr-5 rounded-sm hover:bg-slate-200"
         >
           Copy
         </button>
@@ -23,7 +23,7 @@ function Footer() {
       <ToolTip tooltip="Delete all lyrics">
         <button
           onClick={() => dispatch(clear())}
-          className="shadow-lg bg-opacity-95 bg-white border border-slate-600 px-5 py-1 rounded-sm hover:bg-slate-100"
+          className="shadow-lg bg-opacity-95 bg-white border border-slate-600 px-5 py-1 rounded-sm hover:bg-slate-200"
         >
           Clear
         </button>
