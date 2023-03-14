@@ -21,7 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <main
-        className={`${theme} bg-no-repeat bg-cover flex flex-col w-screen h-screen min-w-fit min-h-fit`}
+        className={`${theme} bg-no-repeat bg-cover flex flex-col w-screen h-screen min-w-fit min-h-fit overflow-x-hidden`}
       >
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <div className="flex flex-col items-center grow mb-60">
