@@ -105,15 +105,24 @@ function UserLyrics({ theme }) {
             prepareRow(row);
             return (
               <tr
-                className={`${
+                className={` ${
                   theme === "bg-hero"
-                    ? "text-slate-700 bg-white even:bg-slate-100"
-                    : "text-white even:bg-slate-400"
+                    ? "text-slate-700 bg-white even:bg-slate-100 hover:bg-slate-200"
+                    : "text-white even:bg-slate-400 hover:bg-slate-300"
                 }`}
                 {...row.getRowProps()}
               >
+                {/* <button
+                  className="opacity-50 text-sm hover:underline items-center"
+                  onClick={() => console.log("hi")}
+                >
+                  Delete
+                </button> */}
                 {row.cells.map((cell) => (
                   <td
+                    // onClick={() => console.log(lyrics[cell.row.id].prompt)}
+
+                    onClick={() => dispatch(remove(lyrics[cell.row.id]))}
                     className="p-2 group/edit border-x border-slate-200"
                     {...cell.getCellProps()}
                   >
