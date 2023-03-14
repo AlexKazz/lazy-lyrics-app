@@ -16,7 +16,7 @@ function UserLyrics({ theme }) {
         accessor: "snippet",
         width: 300,
         maxWidth: 300,
-        minWidth: 300,
+        minWidth: 100,
       },
       {
         Header: "Song",
@@ -31,7 +31,7 @@ function UserLyrics({ theme }) {
         accessor: "prompt",
         width: 75,
         maxWidth: 75,
-        minWidth: 75,
+        minWidth: 50,
       },
     ],
     []
