@@ -18,14 +18,14 @@ const Sidebar = ({ theme }) => {
       ) : (
         <svg
           onClick={() => setShowSidebar(!showSidebar)}
-          className="fixed z-30 flex items-center cursor-pointer right-10 top-6"
+          className="fixed z-30 flex items-center cursor-pointer right-5 top-5"
           fill="#2563EB"
           viewBox="0 0 100 80"
           width="40"
           height="40"
         >
           <AiOutlineQuestionCircle
-            className={`text-6xl hover:text-slate-400 ${
+            className={`text-7xl hover:text-slate-400 ${
               theme === "bg-hero" ? "text-slate-600" : "text-white"
             }`}
           />
@@ -33,7 +33,7 @@ const Sidebar = ({ theme }) => {
       )}
 
       <div
-        className={`overflow-y-auto shadow-md shadow-slate-400 top-0 right-0 w-2/5 ${
+        className={`overflow-y-auto shadow-md shadow-slate-400 top-0 right-0 md:w-5/12 ${
           theme === "bg-hero" ? "bg-slate-100" : "bg-slate-600 text-white"
         }  p-10 pl-20 fixed h-full z-40 ease-in-out duration-300
         ${showSidebar ? "translate-x-0 " : "translate-x-full"}`}

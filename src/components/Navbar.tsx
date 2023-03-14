@@ -9,13 +9,13 @@ import Sidebar from './Sidebar';
 function Navbar({ theme, toggleTheme }) {
   return (
     <div className={`font-fell flex ${
-      theme === "bg-hero" ? "text-slate-500" : "text-white"
+      theme === "bg-hero" ? "text-slate-500" : "text-slate-300"
     } items-center mt-5 shadow-black drop-shadow-lg`}>
       
       <div className='text-3xl ml-8'>Lazy Lyrics</div>
       <div className='flex'>
       
-        <div className='mx-10 link link-underline link-underline-black hover:text-slate-400'>
+        <div className='ml-6 link link-underline link-underline-black hover:text-slate-400'>
           <ToolTip tooltip='View source code on GitHub'>
             <a
               href='https://github.com/AlexKazz/lazy-lyrics-app'
@@ -29,7 +29,7 @@ function Navbar({ theme, toggleTheme }) {
         </div>
         {/* <Sidebar /> */}
       </div>
-      <button onClick={toggleTheme}  className='hover:text-slate-400'>
+      <button onClick={toggleTheme}  className='hover:text-slate-400 ml-6'>
         {theme === 'bg-hero' ? (
           <ToolTip tooltip='Dark mode'>
             <FontAwesomeIcon icon={faMoon} />
@@ -40,9 +40,6 @@ function Navbar({ theme, toggleTheme }) {
           </ToolTip>
         )}
       </button>
-      {/* <div className='ml-10'>
-      <AiOutlineQuestionCircle className='text-2xl'/>
-      </div> */}
       
     </div>
   );

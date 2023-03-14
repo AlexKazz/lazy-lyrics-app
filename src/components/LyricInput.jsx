@@ -61,8 +61,8 @@ function LyricInput({ theme }) {
   return (
     <div className="font-fell m-5 flex-col text-slate-600 shadow-black drop-shadow-lg">
       <p
-        className={`text-base italic ${
-          theme === "bg-hero" ? "text-slate-500" : "text-white"
+        className={`text-base italic text-center ${
+          theme === "bg-hero" ? "text-slate-500" : "text-slate-300"
         }`}
       >
         Enter a word. Get back a lyric from a real song.
@@ -80,7 +80,7 @@ function LyricInput({ theme }) {
 
         <button
           onClick={() => getTrackId}
-          className="border border-slate-600 bg-white shadow-lg bg-opacity-95 px-2 py-1 my-5 rounded-sm hover:bg-slate-100"
+          className="border border-slate-600 bg-white shadow-lg bg-opacity-95 px-2 py-1 my-5 rounded-sm hover:bg-slate-200"
         >
           Submit
         </button>
