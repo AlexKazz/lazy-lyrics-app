@@ -29,7 +29,7 @@ function Navbar({ theme, toggleTheme }) {
         </div>
         {/* <Sidebar /> */}
       </div>
-      <button onClick={toggleTheme}>
+      <button onClick={toggleTheme}  className='hover:text-slate-400'>
         {theme === 'bg-hero' ? (
           <ToolTip tooltip='Dark mode'>
             <FontAwesomeIcon icon={faMoon} />

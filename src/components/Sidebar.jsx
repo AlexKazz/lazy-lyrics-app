@@ -10,7 +10,7 @@ const Sidebar = ({ theme }) => {
         <button
           className={`flex text-3xl ${
             theme === "bg-hero" ? "bg-slate-100" : "bg-slate-600 text-white"
-          } items-center cursor-pointer fixed right-10 top-6 z-50`}
+          } hover:text-slate-400 items-center cursor-pointer fixed right-10 top-6 z-50`}
           onClick={() => setShowSidebar(!showSidebar)}
         >
           x
@@ -25,8 +25,8 @@ const Sidebar = ({ theme }) => {
           height="40"
         >
           <AiOutlineQuestionCircle
-            className={`text-6xl ${
-              theme === "bg-hero" ? "text-slate-500" : "text-white"
+            className={`text-6xl hover:text-slate-400 ${
+              theme === "bg-hero" ? "text-slate-600" : "text-white"
             }`}
           />
         </svg>
