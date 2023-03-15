@@ -39,15 +39,24 @@ Enter a word, and get back a lyric snippet from a real song.
 
 • Lazy Lyrics uses the <a href="https://developer.musixmatch.com/">Musixmatch API</a> to grab lyric snippets based on text input.
 <br/>
+<br/>
 • Due to API method parameter and data limitations, this process must be done in two separate API calls.
+<br/>
 <br/>
 • When you submit a word, an API call is made from the Lazy Lyrics server (built on express) to the Musixmatch API.
 <br/>
+<br/>
 • Information including <a href="https://developer.musixmatch.com/documentation/api-reference/track-search">artist, song title, and track ID</a> are returned.
+<br/>
 <br/>
 • The track ID is then used to make a second Musixmatch API call to grab the <a href="https://developer.musixmatch.com/documentation/api-reference/track-snippet-get">lyric snippet</a>.
 <br/>
+<br/>
 • Lazy lyrics generates a random index and random page number for each submission to provide ~100 different results for the same word.
+<br/>
+<br/>
+• Due to limitations on how Musixmatch makes its data available, the lyrics returned may not always contain your prompt word. In those
+    cases, your prompt word is somewhere else in the song, typically shortly before or after the lyric returned.
 <br/>
 <br/>
 _As this app is currently for personal use_ (not financed 🤷‍♂️), _it is subject to Musixmatch API <a href="https://developer.musixmatch.com/faq">daily data limits</a>. If you submit a word and nothing is returned, the data limit has been reached for that day and you can try again tomorrow._
@@ -58,11 +67,9 @@ _As this app is currently for personal use_ (not financed 🤷‍♂️), _it is
 
 • Type in a word.
 <br/>
-• Get back a lyric 😎
+• Get back a lyric, in addition to the song title, artist, and your prompt.
 <br/>
-• Hover over a lyric to see your prompt, the song title and the artist name.
-<br/>
-• A delete option is also displayed on hover, if you'd like to delete a lyric.
+• Hover over a lyric to delete it.
 <br/>
 • The "Copy" button copies your lyrics to your clipboard.
 <br/>
