@@ -22,6 +22,10 @@
   background-position: 0 100%;
 }
 
+tr {
+  cursor: url('./images/trash.png'), auto;
+}
+
 /* .dark {
   background-color: #333;
   color: #fff;

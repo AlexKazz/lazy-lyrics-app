@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { remove, selectLyrics } from "./lyricsSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useTable, useResizeColumns } from "react-table";
 
 function UserLyrics({ theme }) {
+  const [isShown, setIsShown] = useState(false);
+
   const lyrics = useSelector(selectLyrics);
   const dispatch = useDispatch();
 
@@ -100,30 +102,29 @@ function UserLyrics({ theme }) {
             </tr>
           ))}
         </thead>
+
         <tbody className="font-fell" {...getTableProps()}>
           {rows.map((row) => {
             prepareRow(row);
+
             return (
               <tr
-                className={` ${
+                // onMouseEnter={() => setIsShown(true)}
+                // onMouseLeave={() => setIsShown(false)}
+                className={`group cursor-delete ${
                   theme === "bg-hero"
-                    ? "text-slate-700 bg-white even:bg-slate-100 hover:bg-slate-200"
-                    : "text-white even:bg-slate-400 hover:bg-slate-300"
+                    ? "text-slate-700 bg-white even:bg-slate-100 hover:bg-red-200"
+                    : "text-white even:bg-slate-400 hover:bg-red-300"
                 }`}
                 {...row.getRowProps()}
               >
-                {/* <button
-                  className="opacity-50 text-sm hover:underline items-center"
-                  onClick={() => console.log("hi")}
-                >
-                  Delete
-                </button> */}
+                {/* <p className="hidden group-hover:block">Click to Delete</p> */}
                 {row.cells.map((cell) => (
                   <td
                     // onClick={() => console.log(lyrics[cell.row.id].prompt)}
 
                     onClick={() => dispatch(remove(lyrics[cell.row.id]))}
-                    className="p-2 group/edit border-x border-slate-200"
+                    className="p-2 border-x border-slate-200"
                     {...cell.getCellProps()}
                   >
                     {cell.render("Cell")}
