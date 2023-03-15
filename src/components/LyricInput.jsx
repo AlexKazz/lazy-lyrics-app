@@ -60,13 +60,15 @@ function LyricInput({ theme }) {
 
   return (
     <div className="font-fell m-5 flex-col text-slate-600 shadow-black drop-shadow-lg">
-      <p
-        className={`text-base italic text-center ${
-          theme === "bg-hero" ? "text-slate-500" : "text-slate-300"
-        }`}
-      >
-        Enter a word. Get back a lyric from a real song.
-      </p>
+      {window.innerWidth > 600 ? (
+        <p
+          className={`text-base italic text-center ${
+            theme === "bg-hero" ? "text-slate-500" : "text-slate-300"
+          }`}
+        >
+          Enter a word. Get back a lyric from a real song.
+        </p>
+      ) : null}
       <form
         onSubmit={getTrackId}
         className="justify-center content-center flex"
