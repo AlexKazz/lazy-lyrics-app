@@ -71,10 +71,18 @@ _As this app is currently for personal use_ (not financed 🤷‍♂️), _it is
 <br/>
 • Hover over a lyric to delete it.
 <br/>
-• The "Copy" button copies your lyrics to your clipboard.
+• On a mobile device, select a lyric to view the song info and delete option.
 <br/>
-• The "Clear" button deletes all of your lyrics.
+• The "Copy All" button copies all of your lyrics to your clipboard.
 <br/>
+• The "Delete All" button deletes all of your lyrics.
+<br/>
+• The "Question Mark" button opens a sidebar that contains information about Lazy Lyrics.
+<br/>
+• The Moon/Sun button switches the app colors to Dark/Light mode.
+<br/>
+• The "GitHub" button links to this repository.
+
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
 
