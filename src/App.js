@@ -19,7 +19,6 @@ function App() {
     }
   };
 
-  console.log(window.innerWidth);
   return (
     <BrowserRouter>
       <main
@@ -34,7 +33,7 @@ function App() {
               element={
                 <>
                   <LyricInput theme={theme} />
-                  {window.innerWidth < 500 ? (
+                  {window.innerWidth < 600 ? (
                     <LyricsMobile theme={theme} />
                   ) : (
                     <UserLyrics theme={theme} />
