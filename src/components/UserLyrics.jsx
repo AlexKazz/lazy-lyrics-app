@@ -109,8 +109,6 @@ function UserLyrics({ theme }) {
 
             return (
               <tr
-                // onMouseEnter={() => setIsShown(true)}
-                // onMouseLeave={() => setIsShown(false)}
                 className={`group cursor-delete ${
                   theme === "bg-hero"
                     ? "text-slate-700 bg-white even:bg-slate-100 hover:bg-red-200"
@@ -118,11 +116,8 @@ function UserLyrics({ theme }) {
                 }`}
                 {...row.getRowProps()}
               >
-                {/* <p className="hidden group-hover:block">Click to Delete</p> */}
                 {row.cells.map((cell) => (
                   <td
-                    // onClick={() => console.log(lyrics[cell.row.id].prompt)}
-
                     onClick={() => dispatch(remove(lyrics[cell.row.id]))}
                     className="p-2 border-x border-slate-200"
                     {...cell.getCellProps()}

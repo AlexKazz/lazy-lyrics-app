@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import LyricInput from "./components/LyricInput";
 import UserLyrics from "./components/UserLyrics";
+import LyricsMobile from "./components/LyricsMobile";
 import Footer from "./components/Footer";
 import Sidebar from "./components/Sidebar";
 // import { toggleTheme } from './utils/lyricFunctions';
@@ -32,7 +33,12 @@ function App() {
               element={
                 <>
                   <LyricInput theme={theme} />
-                  <UserLyrics theme={theme} />
+                  {window.innerWidth < 600 ? (
+                    <LyricsMobile theme={theme} />
+                  ) : (
+                    <UserLyrics theme={theme} />
+                  )}
+
                   <Footer />
                 </>
               }

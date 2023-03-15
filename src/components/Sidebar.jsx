@@ -57,6 +57,17 @@ const Sidebar = ({ theme }) => {
             cases, your prompt word is somewhere else in the song, typically
             shortly before or after the lyric returned.
           </p>
+          <p className="mb-5">
+            ➡️{" "}
+            <a
+              href="https://github.com/AlexKazz/lazy-lyrics-app"
+              target="_blank"
+              rel="noreferrer"
+              className="hover:text-slate-400 link link-underline link-underline-black"
+            >
+              Learn more about Lazy Lyrics on GitHub
+            </a>
+          </p>
         </h3>
       </div>
     </>
