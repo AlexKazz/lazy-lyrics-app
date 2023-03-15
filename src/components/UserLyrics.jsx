@@ -75,7 +75,7 @@ function UserLyrics({ theme }) {
         theme === "bg-hero"
           ? "text-slate-500 bg-white"
           : "text-white bg-slate-500"
-      } bg-opacity-100 rounded-lg text-center`}
+      } bg-opacity-100 rounded-sm text-center`}
     >
       <table className="w-full h-28" {...getTableProps()}>
         <thead className="sticky top-0 ">

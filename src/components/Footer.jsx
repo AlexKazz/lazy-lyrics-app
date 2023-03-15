@@ -11,23 +11,21 @@ function Footer() {
 
   return (
     <div className="font-fell mt-6 text-slate-600 flex">
-      <ToolTip tooltip="Copy all lyrics to clipboard">
-        <button
-          onClick={() => copyLyrics(lyrics)}
-          className="shadow-lg bg-opacity-95 bg-white border border-slate-600 px-5 py-1 mr-5 rounded-sm hover:bg-slate-200"
-        >
-          Copy
-        </button>
-      </ToolTip>
+      <button
+        onClick={() => copyLyrics(lyrics)}
+        className="shadow-lg bg-opacity-95 bg-white border border-slate-600 px-5 py-1 mr-5 rounded-sm hover:bg-slate-200"
+      >
+        Copy All
+      </button>
+
       <ToastContainer position="bottom-left" theme="light" autoClose={1000} />
-      <ToolTip tooltip="Delete all lyrics">
-        <button
-          onClick={() => dispatch(clear())}
-          className="shadow-lg bg-opacity-95 bg-white border border-slate-600 px-5 py-1 rounded-sm hover:bg-slate-200"
-        >
-          Clear
-        </button>
-      </ToolTip>
+
+      <button
+        onClick={() => dispatch(clear())}
+        className="shadow-lg bg-opacity-95 bg-white border border-slate-600 px-5 py-1 rounded-sm hover:bg-slate-200"
+      >
+        Delete All
+      </button>
     </div>
   );
 }

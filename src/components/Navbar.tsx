@@ -16,7 +16,7 @@ function Navbar({ theme, toggleTheme }) {
       <div className='flex'>
       
         <div className='ml-6 link link-underline link-underline-black hover:text-slate-400'>
-          <ToolTip tooltip='View source code on GitHub'>
+          
             <a
               href='https://github.com/AlexKazz/lazy-lyrics-app'
               target='_blank'
@@ -25,19 +25,19 @@ function Navbar({ theme, toggleTheme }) {
             >
               GitHub
             </a>
-          </ToolTip>
+          
         </div>
-        {/* <Sidebar /> */}
+        
       </div>
       <button onClick={toggleTheme}  className='hover:text-slate-400 ml-6'>
         {theme === 'bg-hero' ? (
-          <ToolTip tooltip='Dark mode'>
+          
             <FontAwesomeIcon icon={faMoon} />
-          </ToolTip>
+          
         ) : (
-          <ToolTip tooltip='Light mode'>
+          
             <FontAwesomeIcon icon={faSun} />
-          </ToolTip>
+          
         )}
       </button>
       
