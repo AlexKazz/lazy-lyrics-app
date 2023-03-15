@@ -1,9 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [];
 
 export const lyricsSlice = createSlice({
-  name: 'lyrics',
+  name: "lyrics",
   initialState,
   reducers: {
     clear: () => {
