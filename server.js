@@ -1,12 +1,12 @@
-const FULL_KEY = require('dotenv').config();
+const FULL_KEY = require("dotenv").config();
 const MY_KEY = FULL_KEY.parsed.MY_KEY;
-const express = require('express');
-const path = require('path');
+const express = require("express");
+const path = require("path");
 const app = express();
 const port = 4000;
-const axios = require('axios');
+const axios = require("axios");
 
-app.get('/track', async (req, res, next) => {
+app.get("/track", async (req, res, next) => {
   let randomPage = Math.ceil(Math.random() * 10);
   const userInput = req.query.userInput;
 
@@ -17,18 +17,18 @@ app.get('/track', async (req, res, next) => {
   res.send(response.data);
 });
 
-app.get('/lyrics', async (req, res, next) => {
+app.get("/lyrics", async (req, res, next) => {
   const trackId = req.query.trackId;
   const response = await axios.get(
-    `http://api.musixmatch.com/ws/1.1/track.snippet.get?track_id=${trackId}&apikey=${MY_KEY}`
+    `http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=${trackId}&apikey=${MY_KEY}`
   );
   res.send(response.data);
 });
 
-app.use(express.static(path.join(__dirname, './build')));
+app.use(express.static(path.join(__dirname, "./build")));
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, './build', 'index.html'));
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./build", "index.html"));
 });
 
 app.listen(port, () => {
