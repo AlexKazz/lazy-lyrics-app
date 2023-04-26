@@ -11,51 +11,72 @@ function LyricInput({ theme }) {
 
   async function getTrackId(e) {
     e.preventDefault();
-    let randomIndex = Math.floor(Math.random() * 10);
-    if (e.target[0].value)
-      try {
-        const res = await axios.get("/track", {
-          params: {
-            userInput: e.target[0].value,
-          },
-        });
 
-        const trackId =
-          res.data.message.body.track_list[randomIndex].track.track_id;
-        const artist =
-          res.data.message.body.track_list[randomIndex].track.artist_name;
-        const song =
-          res.data.message.body.track_list[randomIndex].track.track_name;
+    if (e.target[0].value) {
+      const userInput = e.target[0].value.toLowerCase();
 
-        getTrackLyrics();
-        async function getTrackLyrics() {
-          try {
-            const newRes = await axios.get("/lyrics", {
-              params: {
-                trackId: trackId,
-              },
-            });
+      let attempts = 0;
+      let found = false;
 
-            const snippet = newRes.data.message.body.snippet.snippet_body;
-            const fixedSnippet = fixer(snippet);
+      while (attempts < 5 && !found) {
+        try {
+          const res = await axios.get("/track", {
+            params: {
+              userInput: userInput,
+            },
+          });
+
+          let randomIndex = Math.floor(
+            Math.random() * res.data.message.body.track_list.length
+          );
+          const trackId =
+            res.data.message.body.track_list[randomIndex].track.track_id;
+          const artist =
+            res.data.message.body.track_list[randomIndex].track.artist_name;
+          const song =
+            res.data.message.body.track_list[randomIndex].track.track_name;
+
+          const newRes = await axios.get("/lyrics", {
+            params: {
+              trackId: trackId,
+            },
+          });
+
+          const lyrics = newRes.data.message.body.lyrics.lyrics_body;
+          const lines = lyrics.split("\n");
+
+          let lineContainingWord = "";
+          for (let line of lines) {
+            if (line.toLowerCase().includes(userInput)) {
+              lineContainingWord = line;
+              break;
+            }
+          }
+
+          if (lineContainingWord) {
+            found = true;
             dispatch(
               add({
                 id: uuidv4(),
-                snippet: fixedSnippet,
+                snippet: lineContainingWord,
                 song: song,
                 artist: artist,
-                prompt: `"` + e.target[0].value + `"`,
+                prompt: `"` + userInput + `"`,
               })
             );
-
-            e.target[0].value = "";
-          } catch (err) {
-            console.log(err);
           }
+
+          e.target[0].value = "";
+        } catch (err) {
+          console.log(err);
         }
-      } catch (err) {
-        console.log(err);
+        attempts++;
       }
+
+      if (!found) {
+        alert("Couldn't find a lyric containing your word. Please try again.");
+      }
+    }
   }
 
   return (
