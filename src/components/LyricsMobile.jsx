@@ -3,9 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { remove, selectLyrics } from "./lyricsSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useTable, useResizeColumns } from "react-table";
+import Loading from "./Loading";
 
 function LyricsMobile({ theme }) {
-  const lyrics = useSelector(selectLyrics);
+  const { lyricsList, loading } = useSelector(selectLyrics);
+  // const lyrics = lyricsList;
+
   const dispatch = useDispatch();
 
   return (
@@ -16,8 +19,8 @@ function LyricsMobile({ theme }) {
           : "text-white bg-slate-500"
       } rounded-sm py-9 px-10 text-center`}
     >
-      {lyrics
-        ? lyrics.map((lyric) => (
+      {lyricsList
+        ? lyricsList.map((lyric) => (
             <div key={lyric.id} className="py-1 group">
               <p className="group-hover:hidden">{lyric.snippet}</p>
               <div

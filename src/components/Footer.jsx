@@ -1,18 +1,18 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { selectLyrics } from "./lyricsSlice";
 import { clear } from "./lyricsSlice";
 import { copyLyrics } from "../utils/lyricFunctions";
 import { ToastContainer } from "react-toastify";
-import ToolTip from "./ToolTip";
 
 function Footer() {
-  const lyrics = useSelector((state) => state.lyrics);
+  const { lyricsList } = useSelector(selectLyrics);
+
   const dispatch = useDispatch();
 
   return (
     <div className="font-fell mt-6 text-slate-600 flex">
       <button
-        onClick={() => copyLyrics(lyrics)}
+        onClick={() => copyLyrics(lyricsList)}
         className="shadow-lg bg-opacity-95 bg-white border border-slate-600 px-5 py-1 mr-5 rounded-sm hover:bg-slate-200"
       >
         Copy All
