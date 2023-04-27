@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-import lyricsReducer from '../components/lyricsSlice';
 import storage from 'redux-persist/lib/storage';
 import { combineReducers } from '@reduxjs/toolkit';
 import {
@@ -11,11 +10,13 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import lyricsSlice from '../components/lyricsSlice';
 
 const persistConfig = {
   key: 'lyrics',
   storage,
+  stateReconciler: autoMergeLevel2,
 };
 
 const reducers = combineReducers({ lyrics: lyricsSlice });

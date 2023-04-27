@@ -1,10 +1,6 @@
-import ToolTip from './ToolTip';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
 import { faSun } from '@fortawesome/free-solid-svg-icons';
-import { FaQuestionCircle } from 'react-icons/fa'
-import { AiOutlineQuestionCircle } from 'react-icons/ai'
-import Sidebar from './Sidebar';
 
 function Navbar({ theme, toggleTheme }) {
   return (

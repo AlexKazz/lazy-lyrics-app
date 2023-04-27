@@ -55,10 +55,6 @@ Enter a word, and get back a lyric snippet from a real song.
 • Lazy lyrics generates a random index and random page number for each submission to provide ~100 different results for the same word.
 <br/>
 <br/>
-• Due to limitations on how Musixmatch makes its data available, the lyrics returned may not always contain your prompt word. In those
-    cases, your prompt word is somewhere else in the song, typically shortly before or after the lyric returned.
-<br/>
-<br/>
 _As this app is currently for personal use_ (not financed 🤷‍♂️), _it is subject to Musixmatch API <a href="https://developer.musixmatch.com/faq">daily data limits</a>. If you submit a word and nothing is returned, the data limit has been reached for that day and you can try again tomorrow._
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
@@ -82,7 +78,6 @@ _As this app is currently for personal use_ (not financed 🤷‍♂️), _it is
 • The Moon/Sun button switches the app colors to Dark/Light mode.
 <br/>
 • The "GitHub" button links to this repository.
-
 
 <p align="right">(<a href="#table-of-contents">back to top</a>)</p>
 

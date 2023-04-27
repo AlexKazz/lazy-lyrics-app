@@ -1,17 +1,17 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { add } from "./lyricsSlice";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
-import { fixer } from "../utils/lyricFunctions";
-import ToolTip from "./ToolTip";
+import Loading from "./Loading";
+import { setLoading, selectLyrics } from "./lyricsSlice";
 
 function LyricInput({ theme }) {
   const dispatch = useDispatch();
+  const { loading } = useSelector(selectLyrics);
 
   async function getTrackId(e) {
     e.preventDefault();
-
+    dispatch(setLoading(true));
     if (e.target[0].value) {
       const userInput = e.target[0].value.toLowerCase();
 
@@ -76,6 +76,7 @@ function LyricInput({ theme }) {
       if (!found) {
         alert("Couldn't find a lyric containing your word. Please try again.");
       }
+      dispatch(setLoading(false));
     }
   }
 
@@ -108,6 +109,7 @@ function LyricInput({ theme }) {
           Submit
         </button>
       </form>
+      {loading && <Loading />}
     </div>
   );
 }
