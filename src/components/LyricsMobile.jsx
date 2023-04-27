@@ -1,13 +1,8 @@
-import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { remove, selectLyrics } from "./lyricsSlice";
-import { v4 as uuidv4 } from "uuid";
-import { useTable, useResizeColumns } from "react-table";
-import Loading from "./Loading";
 
 function LyricsMobile({ theme }) {
-  const { lyricsList, loading } = useSelector(selectLyrics);
-  // const lyrics = lyricsList;
+  const { lyricsList } = useSelector(selectLyrics);
 
   const dispatch = useDispatch();
 

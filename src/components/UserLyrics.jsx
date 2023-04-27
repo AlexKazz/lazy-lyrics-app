@@ -1,18 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { remove, selectLyrics } from "./lyricsSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useTable, useResizeColumns } from "react-table";
-import Loading from "./Loading";
 
 function UserLyrics({ theme }) {
-  const { lyricsList, loading } = useSelector(selectLyrics);
-
-  const [isShown, setIsShown] = useState(false);
-
+  const { lyricsList } = useSelector(selectLyrics);
   const lyrics = lyricsList;
   const dispatch = useDispatch();
-
   const data = React.useMemo(() => lyrics, [lyrics]);
   const columns = React.useMemo(
     () => [
@@ -21,7 +16,6 @@ function UserLyrics({ theme }) {
         accessor: "snippet",
         width: 300,
         maxWidth: 300,
-        // minWidth: 100,
       },
       {
         Header: "Song",
@@ -36,21 +30,19 @@ function UserLyrics({ theme }) {
         accessor: "prompt",
         width: 75,
         maxWidth: 75,
-        // minWidth: 50,
       },
     ],
     []
   );
 
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable(
-      {
-        columns,
-        data,
-      },
+  const { getTableProps, headerGroups, rows, prepareRow } = useTable(
+    {
+      columns,
+      data,
+    },
 
-      useResizeColumns
-    );
+    useResizeColumns
+  );
 
   return (
     <div

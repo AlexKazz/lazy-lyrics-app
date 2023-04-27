@@ -40,8 +40,8 @@ const Sidebar = ({ theme }) => {
       >
         <h3 className="mt-10 text-lg font-fell">
           <p className="mb-5">
-            • Lazy Lyrics uses the Musixmatch API to grab lyric snippets based
-            on text input.
+            • Lazy Lyrics uses the Musixmatch API to grab lyrics from real songs
+            based on the word you submit.
           </p>
           <p className="mb-5">
             • When you submit a word, an API call is made from the Lazy Lyrics
@@ -52,10 +52,8 @@ const Sidebar = ({ theme }) => {
             each submission to provide ~100 different results for the same word.
           </p>
           <p className="mb-5">
-            • Due to limitations on how Musixmatch makes its data available, the
-            lyrics returned may not always contain your prompt word. In those
-            cases, your prompt word is somewhere else in the song, typically
-            shortly before or after the lyric returned.
+            • Musixmatch's non-commercial plan has a daily data limit, so if you
+            keep getting a lyric fetching error, please try again tomorrow.
           </p>
           <p className="mb-5">
             ➡️{" "}

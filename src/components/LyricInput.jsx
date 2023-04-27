@@ -1,10 +1,9 @@
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { add } from "./lyricsSlice";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import Loading from "./Loading";
-import { clear, remove, setLoading, selectLyrics } from "./lyricsSlice";
+import { setLoading, selectLyrics } from "./lyricsSlice";
 
 function LyricInput({ theme }) {
   const dispatch = useDispatch();
